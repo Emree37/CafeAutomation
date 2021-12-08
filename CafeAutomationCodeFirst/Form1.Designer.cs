@@ -29,13 +29,68 @@ namespace CafeAutomationCodeFirst
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.kURULUMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mENÜToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kATMASAAYARLARIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.kURULUMToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // kURULUMToolStripMenuItem
+            // 
+            this.kURULUMToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mENÜToolStripMenuItem,
+            this.kATMASAAYARLARIToolStripMenuItem});
+            this.kURULUMToolStripMenuItem.Name = "kURULUMToolStripMenuItem";
+            this.kURULUMToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.kURULUMToolStripMenuItem.Text = "KURULUM";
+            // 
+            // mENÜToolStripMenuItem
+            // 
+            this.mENÜToolStripMenuItem.Name = "mENÜToolStripMenuItem";
+            this.mENÜToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.mENÜToolStripMenuItem.Text = "MENÜ";
+            this.mENÜToolStripMenuItem.Click += new System.EventHandler(this.mENÜToolStripMenuItem_Click);
+            // 
+            // kATMASAAYARLARIToolStripMenuItem
+            // 
+            this.kATMASAAYARLARIToolStripMenuItem.Name = "kATMASAAYARLARIToolStripMenuItem";
+            this.kATMASAAYARLARIToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.kATMASAAYARLARIToolStripMenuItem.Text = "KAT/MASA AYARLARI";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem kURULUMToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mENÜToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kATMASAAYARLARIToolStripMenuItem;
     }
 }
 
