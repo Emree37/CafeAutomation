@@ -16,5 +16,14 @@ namespace CafeAutomationCodeFirst.Models
         public int FloorOrder { get; set; }
 
         public string Word { get; set; }
+
+
+        public ICollection<Table> Tables { get; set; } = new HashSet<Table>();
+
+
+        public override string ToString()
+        {
+            return $"{FloorName} KATI";
+        }
     }
 }

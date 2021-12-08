@@ -30,5 +30,27 @@ namespace CafeAutomationCodeFirst
             frmMenu.WindowState = FormWindowState.Maximized;
             
         }
+
+        private FrmFloorSetting frmFloorSetting;
+        private void kATMASAAYARLARIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(frmFloorSetting == null || frmFloorSetting.IsDisposed)
+            {
+                frmFloorSetting = new FrmFloorSetting();
+            }
+            frmFloorSetting.Show();
+            frmFloorSetting.WindowState = FormWindowState.Maximized;
+        }
+
+        private FrmCafe frmCafe;
+        private void kAFEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frmCafe == null || frmCafe.IsDisposed)
+            {
+                frmCafe = new FrmCafe();
+            }
+            frmCafe.Show();
+            frmCafe.WindowState = FormWindowState.Maximized;
+        }
     }
 }

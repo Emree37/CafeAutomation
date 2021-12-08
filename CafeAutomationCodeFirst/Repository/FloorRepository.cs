@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CafeAutomationCodeFirst.Repository
 {
-    public class FloorCategory : RepositoryBase<Floor, int>
+    public class FloorRepository : RepositoryBase<Floor, int>
     {
 
     }

@@ -33,13 +33,15 @@ namespace CafeAutomationCodeFirst
             this.kURULUMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mENÜToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kATMASAAYARLARIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kAFEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.kURULUMToolStripMenuItem});
+            this.kURULUMToolStripMenuItem,
+            this.kAFEToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -67,6 +69,14 @@ namespace CafeAutomationCodeFirst
             this.kATMASAAYARLARIToolStripMenuItem.Name = "kATMASAAYARLARIToolStripMenuItem";
             this.kATMASAAYARLARIToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.kATMASAAYARLARIToolStripMenuItem.Text = "KAT/MASA AYARLARI";
+            this.kATMASAAYARLARIToolStripMenuItem.Click += new System.EventHandler(this.kATMASAAYARLARIToolStripMenuItem_Click);
+            // 
+            // kAFEToolStripMenuItem
+            // 
+            this.kAFEToolStripMenuItem.Name = "kAFEToolStripMenuItem";
+            this.kAFEToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.kAFEToolStripMenuItem.Text = "KAFE";
+            this.kAFEToolStripMenuItem.Click += new System.EventHandler(this.kAFEToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -90,6 +100,7 @@ namespace CafeAutomationCodeFirst
         private System.Windows.Forms.ToolStripMenuItem kURULUMToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mENÜToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kATMASAAYARLARIToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kAFEToolStripMenuItem;
     }
 }
 
