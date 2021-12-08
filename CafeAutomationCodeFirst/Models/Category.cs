@@ -21,5 +21,11 @@ namespace CafeAutomationCodeFirst.Models
 
         public ICollection<Product> Products { get; set; } = new HashSet<Product>();
 
+
+        public override string ToString()
+        {
+            return CategoryName;
+        }
+
     }
 }

@@ -25,9 +25,10 @@ namespace CafeAutomationCodeFirst
             {
                 frmMenu = new FrmMenu();
             }
-            frmMenu.MdiParent = this;
-            frmMenu.WindowState = FormWindowState.Maximized;
+            //frmMenu.MdiParent = this;
             frmMenu.Show();
+            frmMenu.WindowState = FormWindowState.Maximized;
+            
         }
     }
 }

@@ -17,7 +17,7 @@ namespace CafeAutomationCodeFirst.Models
 
         public decimal Price { get; set; }
 
-        //public decimal SubTotal { get; set; } // Buna gerek var mı? Şüpheli....
+        //public decimal SubTotal { get; set; } // Buna gerek var mı? Şüpheli.... //notmapped
 
         public bool OrderStatus { get; set; }
 

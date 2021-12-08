@@ -25,5 +25,11 @@ namespace CafeAutomationCodeFirst.Models
 
         [ForeignKey(nameof(CategoryId))]
         public Category Category { get; set; }
+
+
+        public override string ToString()
+        {
+            return ProductName;
+        }
     }
 }

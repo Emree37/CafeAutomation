@@ -65,6 +65,10 @@ namespace CafeAutomationCodeFirst.Data
             modelBuilder.Entity<Product>()
                 .Property(x => x.Price)
                 .HasPrecision(10, 2);
+
+            modelBuilder.Entity<Order>()
+                .Property(x => x.Price)
+                .HasPrecision(10, 2);
         }
 
     }

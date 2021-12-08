@@ -41,6 +41,8 @@ namespace CafeAutomationCodeFirst.Forms
             this.nFiyat = new System.Windows.Forms.NumericUpDown();
             this.pbProduct = new System.Windows.Forms.PictureBox();
             this.btnProductAdd = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nFiyat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProduct)).BeginInit();
@@ -48,12 +50,13 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             // btnCategoryAdd
             // 
-            this.btnCategoryAdd.Location = new System.Drawing.Point(108, 190);
+            this.btnCategoryAdd.Location = new System.Drawing.Point(108, 299);
             this.btnCategoryAdd.Name = "btnCategoryAdd";
             this.btnCategoryAdd.Size = new System.Drawing.Size(157, 67);
             this.btnCategoryAdd.TabIndex = 0;
             this.btnCategoryAdd.Text = "Kategori Ekle";
             this.btnCategoryAdd.UseVisualStyleBackColor = true;
+            this.btnCategoryAdd.Click += new System.EventHandler(this.btnCategoryAdd_Click);
             // 
             // label1
             // 
@@ -73,7 +76,7 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             // pbCategory
             // 
-            this.pbCategory.Location = new System.Drawing.Point(108, 43);
+            this.pbCategory.Location = new System.Drawing.Point(108, 137);
             this.pbCategory.Name = "pbCategory";
             this.pbCategory.Size = new System.Drawing.Size(157, 141);
             this.pbCategory.TabIndex = 3;
@@ -87,6 +90,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.lstCategory.Name = "lstCategory";
             this.lstCategory.Size = new System.Drawing.Size(135, 244);
             this.lstCategory.TabIndex = 4;
+            this.lstCategory.SelectedIndexChanged += new System.EventHandler(this.lstCategory_SelectedIndexChanged);
             // 
             // lstProduct
             // 
@@ -147,12 +151,31 @@ namespace CafeAutomationCodeFirst.Forms
             this.btnProductAdd.TabIndex = 11;
             this.btnProductAdd.Text = "Ürün Ekle";
             this.btnProductAdd.UseVisualStyleBackColor = true;
+            this.btnProductAdd.Click += new System.EventHandler(this.btnProductAdd_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(14, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(75, 15);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "AÇIKLAMA  :";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(108, 46);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(157, 23);
+            this.txtDescription.TabIndex = 13;
             // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(996, 450);
+            this.Controls.Add(this.txtDescription);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnProductAdd);
             this.Controls.Add(this.pbProduct);
             this.Controls.Add(this.nFiyat);
@@ -167,6 +190,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.Controls.Add(this.btnCategoryAdd);
             this.Name = "FrmMenu";
             this.Text = "FrmMenu";
+            this.Load += new System.EventHandler(this.FrmMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbCategory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nFiyat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProduct)).EndInit();
@@ -189,5 +213,7 @@ namespace CafeAutomationCodeFirst.Forms
         private System.Windows.Forms.NumericUpDown nFiyat;
         private System.Windows.Forms.PictureBox pbProduct;
         private System.Windows.Forms.Button btnProductAdd;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtDescription;
     }
 }
