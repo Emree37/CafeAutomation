@@ -22,6 +22,7 @@ namespace CafeAutomationCodeFirst.Forms
 
         private CafeContext cafeContext = new CafeContext();
         private FloorRepository floorRepository = new FloorRepository();
+        private TableRepository tableRepository = new TableRepository();
 
         Color selectedFloorColor = Color.Coral, defaultFloorColor = Color.CornflowerBlue;
 
@@ -50,7 +51,10 @@ namespace CafeAutomationCodeFirst.Forms
             Button selectedButton = sender as Button;
             selectedFloor = selectedButton.Tag as Floor;
 
-            List<Table> tables = selectedFloor.Tables.ToList();
+            //List<Table> tables = selectedFloor.Tables.ToList();
+            List<Table> tables = tableRepository.Get().Where(x => x.FloorId == selectedFloor.Id).ToList();
+
+
             flpTables.Controls.Clear();
             foreach (Table table in tables)
             {
@@ -65,14 +69,35 @@ namespace CafeAutomationCodeFirst.Forms
                 flpTables.Controls.Add(btn);
             }
 
-            //foreach (Button button in collection)
-            //{
+            foreach (Button button in flpFloors.Controls)
+            {
+                button.BackColor = defaultFloorColor;
+                if(button.Text == selectedButton.Text)
+                {
+                    button.BackColor = selectedFloorColor;
+                }
+            }
 
-            //}
+            TableColorControl();
+            
         }
 
+        private void TableColorControl()
+        {
+            //Masanın Siparişleri Varsa Renklendir Ona Göre
+        }
+
+        private FrmOrder frmOrder;
         private void MasaBtn_Click(object sender, EventArgs e)
         {
+            Button selectedButton = sender as Button;
+            if (frmOrder == null || frmOrder.IsDisposed)
+            {
+                frmOrder = new FrmOrder();
+            }
+            frmOrder.WindowState = FormWindowState.Maximized;
+            
+
 
         }
 

@@ -27,6 +27,8 @@ namespace CafeAutomationCodeFirst.Models
         public Category Category { get; set; }
 
 
+        public ICollection<Order> Orders { get; set; } = new HashSet<Order>();
+
         public override string ToString()
         {
             return ProductName;
