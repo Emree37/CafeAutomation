@@ -16,7 +16,7 @@ namespace CafeAutomationCodeFirst.Models
 
         public decimal Price { get; set; }
 
-        //public decimal SubTotal { get; set; } // Buna gerek var mı? Şüpheli.... //notmapped
+        public decimal SubTotal { get => Quantity * Price; }
 
         public bool OrderStatus { get; set; }
 
@@ -36,6 +36,10 @@ namespace CafeAutomationCodeFirst.Models
         [ForeignKey(nameof(ProductId))]
         public Product Product { get; set; }
 
+        public override string ToString()
+        {
+            return $"{Product.ProductName} - {SubTotal:c2}";
+        }
 
     }
 }

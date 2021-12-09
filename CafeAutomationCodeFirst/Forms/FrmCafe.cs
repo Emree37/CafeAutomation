@@ -23,6 +23,7 @@ namespace CafeAutomationCodeFirst.Forms
         private CafeContext cafeContext = new CafeContext();
         private FloorRepository floorRepository = new FloorRepository();
         private TableRepository tableRepository = new TableRepository();
+        private OrderRepository orderRepository = new OrderRepository();
 
         Color selectedFloorColor = Color.Coral, defaultFloorColor = Color.CornflowerBlue;
 
@@ -95,8 +96,12 @@ namespace CafeAutomationCodeFirst.Forms
             {
                 frmOrder = new FrmOrder();
             }
+            frmOrder.Show();
             frmOrder.WindowState = FormWindowState.Maximized;
-            
+            frmOrder.selectedTable = selectedButton.Tag as Table;
+            //frmOrder.OrdersInTable = orderRepository.Get(x => x.TableId == frmOrder.selectedTable.Id /*&& x.Table.TableStatus == false*/)
+            //    .ToList();
+
 
 
         }
