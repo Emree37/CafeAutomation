@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CafeAutomationCodeFirst.Repository.Abstracts
 {
-    public abstract class RepositoryBase<T, TId> : IRepository<T, TId> where T : BaseEntity,new()
+    public abstract class RepositoryBase<T, TId> : IRepository<T, TId> where T : BaseEntity, new()
     {
         protected CafeContext cafeContext;
         public DbSet<T> Table { get; protected set; }
@@ -49,7 +49,8 @@ namespace CafeAutomationCodeFirst.Repository.Abstracts
         public virtual void Remove(T entity)
         {
             Table.Remove(entity);
-            this.Save();
+            var sonuc = this.Save();
+            Console.WriteLine(sonuc);
         }
 
         public virtual int Save()

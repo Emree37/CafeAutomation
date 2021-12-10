@@ -125,6 +125,7 @@ namespace CafeAutomationCodeFirst.Forms
                         join prod in cafeContext.Products on ord.ProductId equals prod.Id
                         select new OrderViewModel()
                         {
+                            OrderId = ord.Id,
                             ProductId = ord.ProductId,
                             ProductName = prod.ProductName,
                             Quantity = ord.Quantity,
@@ -137,7 +138,8 @@ namespace CafeAutomationCodeFirst.Forms
             
             dgvOrders.DataSource = null;
             dgvOrders.DataSource = liste;
-            dgvOrders.Columns["ProductId"].Visible = false;
+            //dgvOrders.Columns["ProductId"].Visible = false;
+            //dgvOrders.Columns["ProductId"].Visible = false;
 
 
             decimal totalPrice = 0;
@@ -156,23 +158,35 @@ namespace CafeAutomationCodeFirst.Forms
 
         private void btnDecrase_Click(object sender, EventArgs e)
         {
-            //var selected = dgvOrders.SelectedRows[0];
-            //orderRepository.Get().FirstOrDefault(x=>x.Id == selected.Cells[0].Value)
+            var selected = dgvOrders.SelectedRows[0];
+            int selectedId = Convert.ToInt32(selected.Cells[0].Value);
+            var order = orderRepository.Get().FirstOrDefault(x => x.ProductId == selectedId);
 
+            if(order.Quantity == 1)
+            {
+                orderRepository.Remove(order);
+            }
+            else
+            {
+                order.Quantity--;
+                order.SubTotal = order.Quantity * order.Price;
+                orderRepository.Update(order);
+            }
+            GetOrders();
+        }
 
-
-            //if (lstCart.SelectedItems.Count == 0) return;
-
-            //var secili = lstCart.SelectedItems[0].Tag as SepetViewModel;
-            //if (secili.Adet == 1)
-            //{
-            //    _sepet.Remove(secili);
-            //}
-            //else
-            //{
-            //    secili.Adet--;
-            //}
-            //SepetiDoldur();
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var selected = dgvOrders.SelectedRows[0];
+            int selectedOrderId = Convert.ToInt32(selected.Cells[0].Value);
+            //int selectedProductId = Convert.ToInt32(selected.Cells[1].Value);
+            //int selectedTableId = Convert.ToInt32(selected.Cells[6].Value);
+            //var order = orderRepository.Get().FirstOrDefault(x => x.ProductId == selectedProductId && x.TableId == selectedTableId);
+            var order = orderRepository.Get().FirstOrDefault(x => x.Id == selectedOrderId);
+            orderRepository.Remove(order);
+            cafeContext.Orders.Remove(order);
+            cafeContext.SaveChanges();
+            GetOrders();
         }
     }
 }

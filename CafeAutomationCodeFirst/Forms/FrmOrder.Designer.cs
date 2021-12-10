@@ -75,6 +75,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "SİL";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnBack
             // 
@@ -114,6 +115,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.ReadOnly = true;
             this.dgvOrders.RowTemplate.Height = 25;
+            this.dgvOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOrders.Size = new System.Drawing.Size(500, 300);
             this.dgvOrders.TabIndex = 8;
             // 
