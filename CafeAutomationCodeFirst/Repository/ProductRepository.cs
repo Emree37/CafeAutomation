@@ -1,4 +1,5 @@
-﻿using CafeAutomationCodeFirst.Models;
+﻿using CafeAutomationCodeFirst.Data;
+using CafeAutomationCodeFirst.Models;
 using CafeAutomationCodeFirst.Repository.Abstracts;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,6 @@ namespace CafeAutomationCodeFirst.Repository
 {
     public  class ProductRepository : RepositoryBase<Product, int>
     {
-
+        
     }
 }

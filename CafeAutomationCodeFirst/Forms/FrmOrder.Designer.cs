@@ -36,7 +36,8 @@ namespace CafeAutomationCodeFirst.Forms
             this.btnBack = new System.Windows.Forms.Button();
             this.btnBill = new System.Windows.Forms.Button();
             this.btnCloseTable = new System.Windows.Forms.Button();
-            this.lstOrders = new System.Windows.Forms.ListBox();
+            this.dgvOrders = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             this.SuspendLayout();
             // 
             // flpCategories
@@ -100,21 +101,26 @@ namespace CafeAutomationCodeFirst.Forms
             this.btnCloseTable.Text = "MASAYI KAPAT";
             this.btnCloseTable.UseVisualStyleBackColor = true;
             // 
-            // lstOrders
+            // dgvOrders
             // 
-            this.lstOrders.FormattingEnabled = true;
-            this.lstOrders.ItemHeight = 15;
-            this.lstOrders.Location = new System.Drawing.Point(606, 31);
-            this.lstOrders.Name = "lstOrders";
-            this.lstOrders.Size = new System.Drawing.Size(293, 409);
-            this.lstOrders.TabIndex = 7;
+            this.dgvOrders.AllowUserToAddRows = false;
+            this.dgvOrders.AllowUserToDeleteRows = false;
+            this.dgvOrders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrders.Location = new System.Drawing.Point(560, 31);
+            this.dgvOrders.MultiSelect = false;
+            this.dgvOrders.Name = "dgvOrders";
+            this.dgvOrders.ReadOnly = true;
+            this.dgvOrders.RowTemplate.Height = 25;
+            this.dgvOrders.Size = new System.Drawing.Size(500, 300);
+            this.dgvOrders.TabIndex = 8;
             // 
             // FrmOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 537);
-            this.Controls.Add(this.lstOrders);
+            this.Controls.Add(this.dgvOrders);
             this.Controls.Add(this.btnCloseTable);
             this.Controls.Add(this.btnBill);
             this.Controls.Add(this.btnBack);
@@ -125,6 +131,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.Name = "FrmOrder";
             this.Text = "FrmOrder";
             this.Load += new System.EventHandler(this.FrmOrder_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -138,6 +145,6 @@ namespace CafeAutomationCodeFirst.Forms
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnBill;
         private System.Windows.Forms.Button btnCloseTable;
-        private System.Windows.Forms.ListBox lstOrders;
+        private System.Windows.Forms.DataGridView dgvOrders;
     }
 }

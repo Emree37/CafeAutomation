@@ -99,10 +99,6 @@ namespace CafeAutomationCodeFirst.Forms
             frmOrder.Show();
             frmOrder.WindowState = FormWindowState.Maximized;
             frmOrder.selectedTable = selectedButton.Tag as Table;
-            //frmOrder.OrdersInTable = orderRepository.Get(x => x.TableId == frmOrder.selectedTable.Id /*&& x.Table.TableStatus == false*/)
-            //    .ToList();
-
-
 
         }
 

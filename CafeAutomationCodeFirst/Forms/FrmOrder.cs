@@ -1,6 +1,7 @@
 ﻿using CafeAutomationCodeFirst.Data;
 using CafeAutomationCodeFirst.Models;
 using CafeAutomationCodeFirst.Repository;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -87,34 +88,42 @@ namespace CafeAutomationCodeFirst.Forms
             Button selectedButton = sender as Button;
             selectedProduct = selectedButton.Tag as Product;
 
-            Order order = new Order()
+            var order = orderRepository.Get().FirstOrDefault(x => x.ProductId == selectedProduct.Id);
+            if (order == null)
             {
-                Quantity = 1,
-                Price = selectedProduct.Price,
-                OrderStatus = false,
-                DateTime = DateTime.Now,
-                DateTimeDay = DateTime.Now.ToString("MM/dd/yyyy"),
-                DateTimeHour = DateTime.Now.ToString("HH:mm:ss"),
-                TableId=selectedTable.Id,
-                ProductId = selectedProduct.Id
-            };
-            orderRepository.Add(order);
-
-            
-
-
-
+                Order newOrder = new Order()
+                {
+                    Quantity = 1,
+                    Price = selectedProduct.Price,
+                    OrderStatus = false,
+                    DateTime = DateTime.Now,
+                    DateTimeDay = DateTime.Now.ToString("MM/dd/yyyy"),
+                    DateTimeHour = DateTime.Now.ToString("HH:mm:ss"),
+                    TableId = selectedTable.Id,
+                    ProductId = selectedProduct.Id,
+                };
+                orderRepository.Add(newOrder);
+            }
+            else
+            {
+                order.Quantity++;
+                orderRepository.Save();
+            }
             GetOrders();
         }
 
         private void GetOrders()
         {
-            List<Order> orders = orderRepository.Get().ToList();
-            lstOrders.Items.Clear();
-            foreach (Order order in orders)
-            {
-                lstOrders.Items.Add(order);
-            }
+            var query = from ord in cafeContext.Orders
+                        join prod in cafeContext.Products on ord.ProductId equals prod.Id
+                        select new
+                        {
+                            prod.ProductName,
+                            ord.Quantity,
+                            ord.Price,
+                            ord.SubTotal
+                        };
+            dgvOrders.DataSource = query.ToList();
 
             //burada toplam tutarı hesaplaman lazım
         }
@@ -122,6 +131,7 @@ namespace CafeAutomationCodeFirst.Forms
         private void FrmOrder_Load(object sender, EventArgs e)
         {
             GetCategories();
+            GetOrders();
         }
     }
 }
