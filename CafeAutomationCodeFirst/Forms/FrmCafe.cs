@@ -94,11 +94,11 @@ namespace CafeAutomationCodeFirst.Forms
             Button selectedButton = sender as Button;
             if (frmOrder == null || frmOrder.IsDisposed)
             {
-                frmOrder = new FrmOrder();
+                frmOrder = new FrmOrder(selectedButton.Tag as Table);
             }
             frmOrder.Show();
             frmOrder.WindowState = FormWindowState.Maximized;
-            frmOrder.selectedTable = selectedButton.Tag as Table;
+            //frmOrder.selectedTable = selectedButton.Tag as Table;
 
         }
 

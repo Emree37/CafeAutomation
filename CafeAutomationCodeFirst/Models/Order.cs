@@ -16,7 +16,9 @@ namespace CafeAutomationCodeFirst.Models
 
         public decimal Price { get; set; }
 
-        public decimal SubTotal { get => Quantity * Price; }
+        //public decimal SubTotal { get => Quantity * Price; }
+
+        public decimal SubTotal { get; set; }
 
         public bool OrderStatus { get; set; }
 

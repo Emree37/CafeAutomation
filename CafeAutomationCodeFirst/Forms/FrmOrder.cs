@@ -1,6 +1,7 @@
 ﻿using CafeAutomationCodeFirst.Data;
 using CafeAutomationCodeFirst.Models;
 using CafeAutomationCodeFirst.Repository;
+using CafeAutomationCodeFirst.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,11 @@ namespace CafeAutomationCodeFirst.Forms
 {
     public partial class FrmOrder : Form
     {
-        public FrmOrder()
+        public Table selectedTable { get; set; }
+        public FrmOrder(Table _selectedTable)
         {
             InitializeComponent();
+            selectedTable = _selectedTable;
         }
 
         private CafeContext cafeContext = new CafeContext();
@@ -26,7 +29,7 @@ namespace CafeAutomationCodeFirst.Forms
         private ProductRepository productRepository = new ProductRepository();
         private OrderRepository orderRepository = new OrderRepository();
         private TableRepository tableRepository = new TableRepository();
-        public Table selectedTable { get; set; }
+        
         public List<Order> OrdersInTable { get; set; }
 
         private List<Category> categories;
@@ -88,13 +91,15 @@ namespace CafeAutomationCodeFirst.Forms
             Button selectedButton = sender as Button;
             selectedProduct = selectedButton.Tag as Product;
 
-            var order = orderRepository.Get().FirstOrDefault(x => x.ProductId == selectedProduct.Id);
+            var order = orderRepository.Get().FirstOrDefault(x => x.ProductId == selectedProduct.Id &&
+            x.TableId == selectedTable.Id);
             if (order == null)
             {
                 Order newOrder = new Order()
                 {
                     Quantity = 1,
                     Price = selectedProduct.Price,
+                    SubTotal = selectedProduct.Price * 1,
                     OrderStatus = false,
                     DateTime = DateTime.Now,
                     DateTimeDay = DateTime.Now.ToString("MM/dd/yyyy"),
@@ -107,31 +112,67 @@ namespace CafeAutomationCodeFirst.Forms
             else
             {
                 order.Quantity++;
-                orderRepository.Save();
+                order.SubTotal = order.Quantity * order.Price;
+                orderRepository.Update(order);
             }
             GetOrders();
         }
 
         private void GetOrders()
         {
+
             var query = from ord in cafeContext.Orders
                         join prod in cafeContext.Products on ord.ProductId equals prod.Id
-                        select new
+                        select new OrderViewModel()
                         {
-                            prod.ProductName,
-                            ord.Quantity,
-                            ord.Price,
-                            ord.SubTotal
+                            ProductId = ord.ProductId,
+                            ProductName = prod.ProductName,
+                            Quantity = ord.Quantity,
+                            Price = ord.Price,
+                            SubTotal = ord.SubTotal,
+                            TableId = ord.TableId
                         };
-            dgvOrders.DataSource = query.ToList();
+            var liste = query.Where(x => x.TableId == selectedTable.Id).ToList();
 
-            //burada toplam tutarı hesaplaman lazım
+            
+            dgvOrders.DataSource = null;
+            dgvOrders.DataSource = liste;
+            dgvOrders.Columns["ProductId"].Visible = false;
+
+
+            decimal totalPrice = 0;
+            foreach (var item in liste)
+            {
+                totalPrice += item.SubTotal;
+            }
+            lblTotalPrice.Text = $"TOPLAM TUTAR : {totalPrice:c2}";
         }
 
         private void FrmOrder_Load(object sender, EventArgs e)
         {
             GetCategories();
             GetOrders();
+        }
+
+        private void btnDecrase_Click(object sender, EventArgs e)
+        {
+            //var selected = dgvOrders.SelectedRows[0];
+            //orderRepository.Get().FirstOrDefault(x=>x.Id == selected.Cells[0].Value)
+
+
+
+            //if (lstCart.SelectedItems.Count == 0) return;
+
+            //var secili = lstCart.SelectedItems[0].Tag as SepetViewModel;
+            //if (secili.Adet == 1)
+            //{
+            //    _sepet.Remove(secili);
+            //}
+            //else
+            //{
+            //    secili.Adet--;
+            //}
+            //SepetiDoldur();
         }
     }
 }

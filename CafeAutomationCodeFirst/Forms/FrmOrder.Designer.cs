@@ -37,6 +37,8 @@ namespace CafeAutomationCodeFirst.Forms
             this.btnBill = new System.Windows.Forms.Button();
             this.btnCloseTable = new System.Windows.Forms.Button();
             this.dgvOrders = new System.Windows.Forms.DataGridView();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.btnDecrase = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,11 +117,32 @@ namespace CafeAutomationCodeFirst.Forms
             this.dgvOrders.Size = new System.Drawing.Size(500, 300);
             this.dgvOrders.TabIndex = 8;
             // 
+            // lblTotalPrice
+            // 
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.Location = new System.Drawing.Point(560, 349);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(129, 15);
+            this.lblTotalPrice.TabIndex = 9;
+            this.lblTotalPrice.Text = "TOPLAM TUTAR :  0.00₺";
+            // 
+            // btnDecrase
+            // 
+            this.btnDecrase.Location = new System.Drawing.Point(548, 372);
+            this.btnDecrase.Name = "btnDecrase";
+            this.btnDecrase.Size = new System.Drawing.Size(101, 68);
+            this.btnDecrase.TabIndex = 10;
+            this.btnDecrase.Text = "AZALT";
+            this.btnDecrase.UseVisualStyleBackColor = true;
+            this.btnDecrase.Click += new System.EventHandler(this.btnDecrase_Click);
+            // 
             // FrmOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 537);
+            this.Controls.Add(this.btnDecrase);
+            this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.dgvOrders);
             this.Controls.Add(this.btnCloseTable);
             this.Controls.Add(this.btnBill);
@@ -133,6 +156,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.Load += new System.EventHandler(this.FrmOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -146,5 +170,7 @@ namespace CafeAutomationCodeFirst.Forms
         private System.Windows.Forms.Button btnBill;
         private System.Windows.Forms.Button btnCloseTable;
         private System.Windows.Forms.DataGridView dgvOrders;
+        private System.Windows.Forms.Label lblTotalPrice;
+        private System.Windows.Forms.Button btnDecrase;
     }
 }
