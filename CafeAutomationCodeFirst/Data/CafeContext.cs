@@ -48,14 +48,14 @@ namespace CafeAutomationCodeFirst.Data
                 ((BaseEntity)item.Entity).UpdatedDate = DateTime.Now;
             }
 
-            entiries = ChangeTracker.Entries()
-                .Where(x => x.Entity is BaseEntity && x.State == EntityState.Deleted);
+            //entiries = ChangeTracker.Entries()
+            //    .Where(x => x.Entity is BaseEntity && x.State == EntityState.Deleted);
 
-            foreach (var item in entiries)
-            {
-                ((BaseEntity)item.Entity).DeletedDate = DateTime.Now;
-                item.State = EntityState.Modified;
-            }
+            //foreach (var item in entiries)
+            //{
+            //    ((BaseEntity)item.Entity).DeletedDate = DateTime.Now;
+            //    item.State = EntityState.Modified;
+            //}
 
             return base.SaveChanges();
         }

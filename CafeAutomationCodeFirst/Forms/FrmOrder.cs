@@ -184,8 +184,8 @@ namespace CafeAutomationCodeFirst.Forms
             //var order = orderRepository.Get().FirstOrDefault(x => x.ProductId == selectedProductId && x.TableId == selectedTableId);
             var order = orderRepository.Get().FirstOrDefault(x => x.Id == selectedOrderId);
             orderRepository.Remove(order);
-            cafeContext.Orders.Remove(order);
-            cafeContext.SaveChanges();
+            //cafeContext.Orders.Remove(order);
+            //cafeContext.SaveChanges();
             GetOrders();
         }
     }

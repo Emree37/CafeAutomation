@@ -49,8 +49,7 @@ namespace CafeAutomationCodeFirst.Repository.Abstracts
         public virtual void Remove(T entity)
         {
             Table.Remove(entity);
-            var sonuc = this.Save();
-            Console.WriteLine(sonuc);
+            this.Save();
         }
 
         public virtual int Save()
