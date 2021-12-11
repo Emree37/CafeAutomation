@@ -66,6 +66,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "İPTAL";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnDelete
             // 
@@ -104,6 +105,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.btnCloseTable.TabIndex = 6;
             this.btnCloseTable.Text = "MASAYI KAPAT";
             this.btnCloseTable.UseVisualStyleBackColor = true;
+            this.btnCloseTable.Click += new System.EventHandler(this.btnCloseTable_Click);
             // 
             // dgvOrders
             // 

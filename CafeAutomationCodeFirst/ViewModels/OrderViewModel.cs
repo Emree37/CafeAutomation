@@ -21,5 +21,7 @@ namespace CafeAutomationCodeFirst.ViewModels
         public decimal SubTotal { get; set; }
 
         public int TableId { get; set; }
+
+        public bool OrderStatus { get; set; }
     }
 }

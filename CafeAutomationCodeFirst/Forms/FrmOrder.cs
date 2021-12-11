@@ -100,7 +100,7 @@ namespace CafeAutomationCodeFirst.Forms
                     Quantity = 1,
                     Price = selectedProduct.Price,
                     SubTotal = selectedProduct.Price * 1,
-                    OrderStatus = false,
+                    OrderStatus = true,
                     DateTime = DateTime.Now,
                     DateTimeDay = DateTime.Now.ToString("MM/dd/yyyy"),
                     DateTimeHour = DateTime.Now.ToString("HH:mm:ss"),
@@ -120,12 +120,13 @@ namespace CafeAutomationCodeFirst.Forms
 
         private void GetOrders()
         {
-
+            
             var query = from ord in cafeContext.Orders
                         join prod in cafeContext.Products on ord.ProductId equals prod.Id
                         select new OrderViewModel()
                         {
                             OrderId = ord.Id,
+                            OrderStatus = ord.OrderStatus,
                             ProductId = ord.ProductId,
                             ProductName = prod.ProductName,
                             Quantity = ord.Quantity,
@@ -133,14 +134,14 @@ namespace CafeAutomationCodeFirst.Forms
                             SubTotal = ord.SubTotal,
                             TableId = ord.TableId
                         };
-            var liste = query.Where(x => x.TableId == selectedTable.Id).ToList();
+            var liste = query.Where(x => x.TableId == selectedTable.Id && x.OrderStatus == true).ToList();
 
             
             dgvOrders.DataSource = null;
             dgvOrders.DataSource = liste;
             //dgvOrders.Columns["ProductId"].Visible = false;
             //dgvOrders.Columns["ProductId"].Visible = false;
-
+            dgvOrders.ClearSelection();
 
             decimal totalPrice = 0;
             foreach (var item in liste)
@@ -187,6 +188,33 @@ namespace CafeAutomationCodeFirst.Forms
         private void btnBack_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            var orderList = orderRepository.Get().ToList();
+            foreach (var item in orderList)
+            {
+                if(item.TableId == selectedTable.Id)
+                {
+                    orderRepository.Remove(item);
+                }
+            }
+            GetOrders();
+        }
+
+        private void btnCloseTable_Click(object sender, EventArgs e)
+        {
+            var orderList = orderRepository.Get().ToList();
+            foreach (var item in orderList)
+            {
+                if (item.TableId == selectedTable.Id)
+                {
+                    item.OrderStatus = false;
+                    orderRepository.Update(item);
+                }
+            }
+            GetOrders();
         }
     }
 }
