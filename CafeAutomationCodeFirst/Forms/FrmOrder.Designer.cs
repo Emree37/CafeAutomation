@@ -85,6 +85,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.btnBack.TabIndex = 4;
             this.btnBack.Text = "GERİ";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnBill
             // 

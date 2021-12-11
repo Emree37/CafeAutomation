@@ -159,8 +159,8 @@ namespace CafeAutomationCodeFirst.Forms
         private void btnDecrase_Click(object sender, EventArgs e)
         {
             var selected = dgvOrders.SelectedRows[0];
-            int selectedId = Convert.ToInt32(selected.Cells[0].Value);
-            var order = orderRepository.Get().FirstOrDefault(x => x.ProductId == selectedId);
+            int selectedOrderId = Convert.ToInt32(selected.Cells[0].Value);
+            var order = orderRepository.Get().FirstOrDefault(x => x.Id == selectedOrderId);
 
             if(order.Quantity == 1)
             {
@@ -179,14 +179,14 @@ namespace CafeAutomationCodeFirst.Forms
         {
             var selected = dgvOrders.SelectedRows[0];
             int selectedOrderId = Convert.ToInt32(selected.Cells[0].Value);
-            //int selectedProductId = Convert.ToInt32(selected.Cells[1].Value);
-            //int selectedTableId = Convert.ToInt32(selected.Cells[6].Value);
-            //var order = orderRepository.Get().FirstOrDefault(x => x.ProductId == selectedProductId && x.TableId == selectedTableId);
             var order = orderRepository.Get().FirstOrDefault(x => x.Id == selectedOrderId);
             orderRepository.Remove(order);
-            //cafeContext.Orders.Remove(order);
-            //cafeContext.SaveChanges();
             GetOrders();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
