@@ -102,7 +102,7 @@ namespace CafeAutomationCodeFirst.Forms
                     SubTotal = selectedProduct.Price * 1,
                     OrderStatus = true,
                     DateTime = DateTime.Now,
-                    DateTimeDay = DateTime.Now.ToString("MM/dd/yyyy"),
+                    DateTimeDay = DateTime.Now.ToString("dd/MM/yyyy"),
                     DateTimeHour = DateTime.Now.ToString("HH:mm:ss"),
                     TableId = selectedTable.Id,
                     ProductId = selectedProduct.Id,

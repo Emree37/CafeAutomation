@@ -29,11 +29,13 @@ namespace CafeAutomationCodeFirst
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.kURULUMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mENÜToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kATMASAAYARLARIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kAFEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rAPORToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,7 +43,8 @@ namespace CafeAutomationCodeFirst
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.kURULUMToolStripMenuItem,
-            this.kAFEToolStripMenuItem});
+            this.kAFEToolStripMenuItem,
+            this.rAPORToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -78,10 +81,19 @@ namespace CafeAutomationCodeFirst
             this.kAFEToolStripMenuItem.Text = "KAFE";
             this.kAFEToolStripMenuItem.Click += new System.EventHandler(this.kAFEToolStripMenuItem_Click);
             // 
+            // rAPORToolStripMenuItem
+            // 
+            this.rAPORToolStripMenuItem.Name = "rAPORToolStripMenuItem";
+            this.rAPORToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.rAPORToolStripMenuItem.Text = "RAPOR";
+            this.rAPORToolStripMenuItem.Click += new System.EventHandler(this.rAPORToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -104,6 +116,7 @@ namespace CafeAutomationCodeFirst
         private System.Windows.Forms.ToolStripMenuItem mENÜToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kATMASAAYARLARIToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kAFEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rAPORToolStripMenuItem;
     }
 }
 

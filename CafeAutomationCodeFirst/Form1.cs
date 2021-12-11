@@ -52,5 +52,16 @@ namespace CafeAutomationCodeFirst
             frmCafe.Show();
             frmCafe.WindowState = FormWindowState.Maximized;
         }
+
+        private FrmReport frmReport;
+        private void rAPORToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frmReport == null || frmReport.IsDisposed)
+            {
+                frmReport = new FrmReport();
+            }
+            frmReport.Show();
+            frmReport.WindowState = FormWindowState.Maximized;
+        }
     }
 }

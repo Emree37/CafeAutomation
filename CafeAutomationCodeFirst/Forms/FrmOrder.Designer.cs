@@ -133,9 +133,9 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             // btnDecrase
             // 
-            this.btnDecrase.Location = new System.Drawing.Point(548, 372);
+            this.btnDecrase.Location = new System.Drawing.Point(919, 337);
             this.btnDecrase.Name = "btnDecrase";
-            this.btnDecrase.Size = new System.Drawing.Size(101, 68);
+            this.btnDecrase.Size = new System.Drawing.Size(66, 27);
             this.btnDecrase.TabIndex = 10;
             this.btnDecrase.Text = "AZALT";
             this.btnDecrase.UseVisualStyleBackColor = true;
