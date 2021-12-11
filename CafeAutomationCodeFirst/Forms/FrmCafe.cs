@@ -44,6 +44,13 @@ namespace CafeAutomationCodeFirst.Forms
                 btn.Click += KatBtn_Click;
                 flpFloors.Controls.Add(btn);
             }
+
+            foreach (Button button in flpFloors.Controls)  //İlk katın 
+            {
+                button.PerformClick();
+                break;
+            }
+
         }
 
         private Floor selectedFloor;
@@ -83,9 +90,19 @@ namespace CafeAutomationCodeFirst.Forms
             
         }
 
-        private void TableColorControl()
+        public Table controlTable;
+        public void TableColorControl()
         {
             //Masanın Siparişleri Varsa Renklendir Ona Göre
+            foreach (Button button in flpTables.Controls)
+            {
+                controlTable = button.Tag as Table;
+                var control = orderRepository.Get().FirstOrDefault(x => x.TableId == controlTable.Id && x.OrderStatus == true);
+                if(control != null)
+                {
+                    button.BackColor = Color.Red;
+                }
+            }
         }
 
         private FrmOrder frmOrder;
@@ -98,8 +115,8 @@ namespace CafeAutomationCodeFirst.Forms
             }
             frmOrder.Show();
             frmOrder.WindowState = FormWindowState.Maximized;
-            //frmOrder.selectedTable = selectedButton.Tag as Table;
-
+            Close();
+            //frmOrder.selectedTable = selectedButton.Tag as Table;  //Formun Loadında Gönderdik....
         }
 
     }

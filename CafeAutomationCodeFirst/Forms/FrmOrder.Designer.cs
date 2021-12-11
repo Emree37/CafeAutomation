@@ -158,6 +158,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.Controls.Add(this.flpCategories);
             this.Name = "FrmOrder";
             this.Text = "FrmOrder";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmOrder_FormClosed);
             this.Load += new System.EventHandler(this.FrmOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
             this.ResumeLayout(false);

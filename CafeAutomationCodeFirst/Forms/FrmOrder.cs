@@ -92,7 +92,7 @@ namespace CafeAutomationCodeFirst.Forms
             selectedProduct = selectedButton.Tag as Product;
 
             var order = orderRepository.Get().FirstOrDefault(x => x.ProductId == selectedProduct.Id &&
-            x.TableId == selectedTable.Id);
+            x.TableId == selectedTable.Id && x.OrderStatus == true); 
             if (order == null)
             {
                 Order newOrder = new Order()
@@ -115,6 +115,7 @@ namespace CafeAutomationCodeFirst.Forms
                 order.SubTotal = order.Quantity * order.Price;
                 orderRepository.Update(order);
             }
+            
             GetOrders();
         }
 
@@ -187,7 +188,7 @@ namespace CafeAutomationCodeFirst.Forms
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Close();
+            Close();           
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -201,6 +202,7 @@ namespace CafeAutomationCodeFirst.Forms
                 }
             }
             GetOrders();
+            Close();
         }
 
         private void btnCloseTable_Click(object sender, EventArgs e)
@@ -215,6 +217,18 @@ namespace CafeAutomationCodeFirst.Forms
                 }
             }
             GetOrders();
+            Close();
+        }
+
+        private FrmCafe frmCafe;
+        private void FrmOrder_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (frmCafe == null || frmCafe.IsDisposed)
+            {
+                frmCafe = new FrmCafe();
+            }
+            frmCafe.Show();
+            frmCafe.WindowState = FormWindowState.Maximized;
         }
     }
 }

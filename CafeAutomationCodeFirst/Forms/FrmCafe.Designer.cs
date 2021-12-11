@@ -63,7 +63,7 @@ namespace CafeAutomationCodeFirst.Forms
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flpFloors;
-        private System.Windows.Forms.FlowLayoutPanel flpTables;
+        public System.Windows.Forms.FlowLayoutPanel flpFloors;
+        public System.Windows.Forms.FlowLayoutPanel flpTables;
     }
 }
