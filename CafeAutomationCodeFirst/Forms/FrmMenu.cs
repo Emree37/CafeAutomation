@@ -156,6 +156,7 @@ namespace CafeAutomationCodeFirst.Forms
 
         private void btnCategoryUpdate_Click(object sender, EventArgs e)
         {
+            if (selectedCategory == null) return;
             selectedCategory.CategoryName = txtCategoryName.Text;
             selectedCategory.Description = txtDescription.Text;
             if (pbCategory.Image != null)
@@ -171,6 +172,7 @@ namespace CafeAutomationCodeFirst.Forms
 
         private void btnProductUpdate_Click(object sender, EventArgs e)
         {
+            if (selectedProduct == null) return;
             selectedProduct.ProductName = txtProductName.Text;
             selectedProduct.Price = nFiyat.Value;
             if (pbProduct.Image != null)
@@ -182,6 +184,27 @@ namespace CafeAutomationCodeFirst.Forms
             }
             productRepository.Update(selectedProduct);
             GetProducts();
+        }
+
+        private void btnCategoryDelete_Click(object sender, EventArgs e)
+        {
+            if (selectedCategory == null) return;
+            selectedCategory.IsDeleted = true;
+            categoryRepository.Update(selectedCategory);
+            GetCategories();
+        }
+
+        private void btnProductDelete_Click(object sender, EventArgs e)
+        {
+            if (selectedProduct == null) return;
+            selectedProduct.IsDeleted = true;
+            productRepository.Update(selectedProduct);
+            GetProducts();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
