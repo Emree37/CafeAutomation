@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -254,6 +255,44 @@ namespace CafeAutomationCodeFirst.Forms
             }
             frmCafe.Show();
             frmCafe.WindowState = FormWindowState.Maximized;
+        }
+
+        private void btnBill_Click(object sender, EventArgs e)
+        {
+            using (System.IO.StreamWriter file =
+         new System.IO.StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"/yazdir.txt", false))
+            {
+                file.WriteLine("   ----------  CAFE AUTOMATİON  ----------   ");
+                file.WriteLine("--- Masa Detay : ---");
+                file.WriteLine(" |     Ürün    |    Fiyat    |     Adet   ");
+                string lines = "";
+
+                for (int row = 0; row < 5; row++)
+                {
+                    for (int col = 0; col < 3; col++)
+                    {
+
+                        lines = lines + " | " + dgvOrders.Rows[row].Cells[col].Value.ToString();
+                        if (col == 2)
+                        {
+                            file.WriteLine(lines);
+                            lines = "";
+                        }
+                    }
+
+                }
+                file.WriteLine(" ------------------------");
+                file.WriteLine(" Toplam :" + lblTotalPrice.Text.ToString());
+
+            }
+
+
+            var pi = new ProcessStartInfo("yazdir.txt");
+            pi.UseShellExecute = true;
+            pi.Verb = "print";
+            //var process = System.Diagnostics.Process.Start(pi);
+
+            MessageBox.Show("YAZDIRILIYOR...");
         }
     }
 }

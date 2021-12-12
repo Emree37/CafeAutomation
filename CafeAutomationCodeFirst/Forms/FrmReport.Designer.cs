@@ -86,11 +86,11 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             this.lblDay.AutoSize = true;
             this.lblDay.BackColor = System.Drawing.Color.Transparent;
-            this.lblDay.Font = new System.Drawing.Font("Sitka Small", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDay.Font = new System.Drawing.Font("Yu Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblDay.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblDay.Location = new System.Drawing.Point(272, 481);
+            this.lblDay.Location = new System.Drawing.Point(272, 498);
             this.lblDay.Name = "lblDay";
-            this.lblDay.Size = new System.Drawing.Size(80, 31);
+            this.lblDay.Size = new System.Drawing.Size(85, 31);
             this.lblDay.TabIndex = 3;
             this.lblDay.Text = "label1";
             // 
@@ -98,11 +98,11 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             this.lblTotalPrice.AutoSize = true;
             this.lblTotalPrice.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotalPrice.Font = new System.Drawing.Font("Sitka Small", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTotalPrice.Font = new System.Drawing.Font("Yu Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTotalPrice.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblTotalPrice.Location = new System.Drawing.Point(720, 480);
+            this.lblTotalPrice.Location = new System.Drawing.Point(720, 497);
             this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(80, 31);
+            this.lblTotalPrice.Size = new System.Drawing.Size(85, 31);
             this.lblTotalPrice.TabIndex = 4;
             this.lblTotalPrice.Text = "label1";
             // 
@@ -135,11 +135,11 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             this.lblFilterPrice.AutoSize = true;
             this.lblFilterPrice.BackColor = System.Drawing.Color.Transparent;
-            this.lblFilterPrice.Font = new System.Drawing.Font("Sitka Small", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblFilterPrice.Font = new System.Drawing.Font("Yu Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblFilterPrice.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFilterPrice.Location = new System.Drawing.Point(976, 481);
+            this.lblFilterPrice.Location = new System.Drawing.Point(976, 498);
             this.lblFilterPrice.Name = "lblFilterPrice";
-            this.lblFilterPrice.Size = new System.Drawing.Size(539, 31);
+            this.lblFilterPrice.Size = new System.Drawing.Size(579, 31);
             this.lblFilterPrice.TabIndex = 9;
             this.lblFilterPrice.Text = "SEÇİLİ GÜNLER ARASI TOPLAM CİRO :     0.00₺";
             // 

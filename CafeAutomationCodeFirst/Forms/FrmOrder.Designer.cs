@@ -101,6 +101,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.btnBill.Size = new System.Drawing.Size(150, 100);
             this.btnBill.TabIndex = 5;
             this.btnBill.UseVisualStyleBackColor = true;
+            this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
             // 
             // btnCloseTable
             // 

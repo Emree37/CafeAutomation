@@ -29,6 +29,7 @@ namespace CafeAutomationCodeFirst.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFloorSetting));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,117 +42,158 @@ namespace CafeAutomationCodeFirst.Forms
             this.lstFloor = new System.Windows.Forms.ListBox();
             this.btnFloorUpdate = new System.Windows.Forms.Button();
             this.btnFloorDelete = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(320, 117);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(549, 195);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 15);
+            this.label1.Size = new System.Drawing.Size(101, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "KAT ADI :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(329, 146);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Location = new System.Drawing.Point(564, 243);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 15);
+            this.label2.Size = new System.Drawing.Size(87, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "SIRASI :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(329, 178);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.Location = new System.Drawing.Point(564, 297);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 15);
+            this.label3.Size = new System.Drawing.Size(82, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "KODU :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(292, 207);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(501, 345);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 15);
+            this.label4.Size = new System.Drawing.Size(148, 25);
             this.label4.TabIndex = 3;
             this.label4.Text = "MASA SAYISI :";
             // 
             // txtFloorName
             // 
-            this.txtFloorName.Location = new System.Drawing.Point(381, 117);
+            this.txtFloorName.Location = new System.Drawing.Point(653, 195);
+            this.txtFloorName.Margin = new System.Windows.Forms.Padding(5);
             this.txtFloorName.Name = "txtFloorName";
-            this.txtFloorName.Size = new System.Drawing.Size(100, 23);
+            this.txtFloorName.Size = new System.Drawing.Size(169, 38);
             this.txtFloorName.TabIndex = 4;
             // 
             // txtTableCount
             // 
-            this.txtTableCount.Location = new System.Drawing.Point(381, 204);
+            this.txtTableCount.Location = new System.Drawing.Point(653, 340);
+            this.txtTableCount.Margin = new System.Windows.Forms.Padding(5);
             this.txtTableCount.Name = "txtTableCount";
-            this.txtTableCount.Size = new System.Drawing.Size(100, 23);
+            this.txtTableCount.Size = new System.Drawing.Size(169, 38);
             this.txtTableCount.TabIndex = 5;
             // 
             // txtWord
             // 
-            this.txtWord.Location = new System.Drawing.Point(381, 175);
+            this.txtWord.Location = new System.Drawing.Point(653, 292);
+            this.txtWord.Margin = new System.Windows.Forms.Padding(5);
             this.txtWord.Name = "txtWord";
-            this.txtWord.Size = new System.Drawing.Size(100, 23);
+            this.txtWord.Size = new System.Drawing.Size(169, 38);
             this.txtWord.TabIndex = 6;
             // 
             // txtFloorOrder
             // 
-            this.txtFloorOrder.Location = new System.Drawing.Point(381, 146);
+            this.txtFloorOrder.Location = new System.Drawing.Point(653, 243);
+            this.txtFloorOrder.Margin = new System.Windows.Forms.Padding(5);
             this.txtFloorOrder.Name = "txtFloorOrder";
-            this.txtFloorOrder.Size = new System.Drawing.Size(100, 23);
+            this.txtFloorOrder.Size = new System.Drawing.Size(169, 38);
             this.txtFloorOrder.TabIndex = 7;
             // 
             // btnFloorAdd
             // 
-            this.btnFloorAdd.Location = new System.Drawing.Point(689, 117);
+            this.btnFloorAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFloorAdd.BackgroundImage")));
+            this.btnFloorAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFloorAdd.Location = new System.Drawing.Point(1265, 195);
+            this.btnFloorAdd.Margin = new System.Windows.Forms.Padding(5);
             this.btnFloorAdd.Name = "btnFloorAdd";
-            this.btnFloorAdd.Size = new System.Drawing.Size(100, 101);
+            this.btnFloorAdd.Size = new System.Drawing.Size(238, 168);
             this.btnFloorAdd.TabIndex = 8;
-            this.btnFloorAdd.Text = "KAYDET";
             this.btnFloorAdd.UseVisualStyleBackColor = true;
             this.btnFloorAdd.Click += new System.EventHandler(this.btnFloorAdd_Click);
             // 
             // lstFloor
             // 
             this.lstFloor.FormattingEnabled = true;
-            this.lstFloor.ItemHeight = 15;
-            this.lstFloor.Location = new System.Drawing.Point(511, 117);
+            this.lstFloor.ItemHeight = 25;
+            this.lstFloor.Location = new System.Drawing.Point(876, 195);
+            this.lstFloor.Margin = new System.Windows.Forms.Padding(5);
             this.lstFloor.Name = "lstFloor";
-            this.lstFloor.Size = new System.Drawing.Size(157, 319);
+            this.lstFloor.Size = new System.Drawing.Size(357, 529);
             this.lstFloor.TabIndex = 9;
             this.lstFloor.SelectedIndexChanged += new System.EventHandler(this.lstFloor_SelectedIndexChanged);
             // 
             // btnFloorUpdate
             // 
-            this.btnFloorUpdate.Location = new System.Drawing.Point(689, 237);
+            this.btnFloorUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFloorUpdate.BackgroundImage")));
+            this.btnFloorUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFloorUpdate.Location = new System.Drawing.Point(1265, 397);
+            this.btnFloorUpdate.Margin = new System.Windows.Forms.Padding(5);
             this.btnFloorUpdate.Name = "btnFloorUpdate";
-            this.btnFloorUpdate.Size = new System.Drawing.Size(100, 90);
+            this.btnFloorUpdate.Size = new System.Drawing.Size(238, 150);
             this.btnFloorUpdate.TabIndex = 10;
-            this.btnFloorUpdate.Text = "GÜNCELLE";
             this.btnFloorUpdate.UseVisualStyleBackColor = true;
             this.btnFloorUpdate.Click += new System.EventHandler(this.btnFloorUpdate_Click);
             // 
             // btnFloorDelete
             // 
-            this.btnFloorDelete.Location = new System.Drawing.Point(689, 349);
+            this.btnFloorDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFloorDelete.BackgroundImage")));
+            this.btnFloorDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFloorDelete.Location = new System.Drawing.Point(1265, 582);
+            this.btnFloorDelete.Margin = new System.Windows.Forms.Padding(5);
             this.btnFloorDelete.Name = "btnFloorDelete";
-            this.btnFloorDelete.Size = new System.Drawing.Size(100, 87);
+            this.btnFloorDelete.Size = new System.Drawing.Size(238, 145);
             this.btnFloorDelete.TabIndex = 11;
-            this.btnFloorDelete.Text = "SİL";
             this.btnFloorDelete.UseVisualStyleBackColor = true;
             this.btnFloorDelete.Click += new System.EventHandler(this.btnFloorDelete_Click);
             // 
+            // btnBack
+            // 
+            this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBack.Location = new System.Drawing.Point(1749, 848);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(153, 103);
+            this.btnBack.TabIndex = 12;
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // FrmFloorSetting
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1181, 638);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1924, 1061);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnFloorDelete);
             this.Controls.Add(this.btnFloorUpdate);
             this.Controls.Add(this.lstFloor);
@@ -164,6 +206,9 @@ namespace CafeAutomationCodeFirst.Forms
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmFloorSetting";
@@ -189,5 +234,6 @@ namespace CafeAutomationCodeFirst.Forms
         private System.Windows.Forms.ListBox lstFloor;
         private System.Windows.Forms.Button btnFloorUpdate;
         private System.Windows.Forms.Button btnFloorDelete;
+        private System.Windows.Forms.Button btnBack;
     }
 }

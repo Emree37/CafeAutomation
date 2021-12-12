@@ -23,6 +23,7 @@ namespace CafeAutomationCodeFirst.Forms
         private CafeContext cafeContext = new CafeContext();
         private FloorRepository floorRepository = new FloorRepository();
         private TableRepository tableRepository = new TableRepository();
+        private OrderRepository orderRepository = new OrderRepository();
 
         private void FrmFloorSetting_Load(object sender, EventArgs e)
         {
@@ -79,19 +80,42 @@ namespace CafeAutomationCodeFirst.Forms
 
         }
 
+        private bool varMi = false;
         private void btnFloorDelete_Click(object sender, EventArgs e)
         {
             if (selectedFloor == null) return;
-            selectedFloor.IsDeleted = true;
+            
 
             List<Table> tables = tableRepository.Get().Where(x => x.FloorId == selectedFloor.Id && x.IsDeleted == false).OrderBy(x => x.TableOrder).ToList();
+            
             foreach (Table table in tables)
             {
-                table.IsDeleted = true;
-                tableRepository.Update(table);
+                var control = orderRepository.Get().FirstOrDefault(x => x.TableId == table.Id && x.OrderStatus == true && x.IsDeleted == false);
+                if (control != null)
+                {
+                    varMi = true;
+                    break;
+                }
+                else
+                {
+                    varMi = false;
+                }
             }
 
-            floorRepository.Update(selectedFloor);
+            if(varMi == true)
+            {
+                MessageBox.Show("Silmek İstediğiniz Katta Aktif Sipariş Var!!!");
+            }
+            else
+            {
+                foreach (Table table in tables)
+                {
+                    table.IsDeleted = true;
+                    tableRepository.Update(table);
+                }
+                selectedFloor.IsDeleted = true;
+                floorRepository.Update(selectedFloor);
+            }
             GetFloors();
         }
 
@@ -127,6 +151,11 @@ namespace CafeAutomationCodeFirst.Forms
             floorRepository.Save();
             GetFloors();
             
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
