@@ -78,7 +78,7 @@ namespace CafeAutomationCodeFirst.Forms
             //lstProduct.DataSource = null;
             //lstProduct.DataSource = selectedCategory.Products.ToList();
             GetProducts();
-
+            
         }
     }
 }

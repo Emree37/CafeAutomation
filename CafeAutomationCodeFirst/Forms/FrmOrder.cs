@@ -210,9 +210,12 @@ namespace CafeAutomationCodeFirst.Forms
             var orderList = orderRepository.Get().ToList();
             foreach (var item in orderList)
             {
-                if (item.TableId == selectedTable.Id)
+                if (item.TableId == selectedTable.Id && item.OrderStatus == true)
                 {
                     item.OrderStatus = false;
+                    item.DateTime = DateTime.Now;
+                    item.DateTimeDay = DateTime.Now.ToString("dd/MM/yyyy");
+                    item.DateTimeHour = DateTime.Now.ToString("HH:mm:ss");
                     orderRepository.Update(item);
                 }
             }
