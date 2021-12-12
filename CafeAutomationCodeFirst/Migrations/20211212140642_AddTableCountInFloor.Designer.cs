@@ -4,14 +4,16 @@ using CafeAutomationCodeFirst.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CafeAutomationCodeFirst.Migrations
 {
     [DbContext(typeof(CafeContext))]
-    partial class CafeContextModelSnapshot : ModelSnapshot
+    [Migration("20211212140642_AddTableCountInFloor")]
+    partial class AddTableCountInFloor
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,9 +43,6 @@ namespace CafeAutomationCodeFirst.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
@@ -70,9 +69,6 @@ namespace CafeAutomationCodeFirst.Migrations
 
                     b.Property<int>("FloorOrder")
                         .HasColumnType("int");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
 
                     b.Property<int>("TableCount")
                         .HasColumnType("int");
@@ -109,9 +105,6 @@ namespace CafeAutomationCodeFirst.Migrations
 
                     b.Property<DateTime?>("DeletedDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
 
                     b.Property<bool>("OrderStatus")
                         .HasColumnType("bit");
@@ -160,9 +153,6 @@ namespace CafeAutomationCodeFirst.Migrations
                     b.Property<DateTime?>("DeletedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
                     b.Property<decimal>("Price")
                         .HasPrecision(10, 2)
                         .HasColumnType("decimal(10,2)");
@@ -198,9 +188,6 @@ namespace CafeAutomationCodeFirst.Migrations
 
                     b.Property<int>("FloorId")
                         .HasColumnType("int");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
 
                     b.Property<string>("TableName")
                         .HasColumnType("nvarchar(max)");

@@ -114,7 +114,7 @@ namespace CafeAutomationCodeFirst.Forms
             var query2 = from ord in cafeContext.Orders
                          join prod in cafeContext.Products on ord.ProductId equals prod.Id
                          join tbl in cafeContext.Tables on ord.TableId equals tbl.Id
-                         where ord.DateTimeDay == dateTimePicker2.Value.ToString("dd/MM/yyyy")
+                         where ord.DateTimeDay == dateTimePicker2.Value.ToString("dd/MM/yyyy") && ord.OrderStatus == false
                          group new { ord, prod, tbl } by new
                          {
                              prod.ProductName,
@@ -208,7 +208,7 @@ namespace CafeAutomationCodeFirst.Forms
                 var query2 = from ord in cafeContext.Orders
                              join prod in cafeContext.Products on ord.ProductId equals prod.Id
                              join tbl in cafeContext.Tables on ord.TableId equals tbl.Id
-                             where ord.DateTime >= dateTimePicker2.Value && ord.DateTime <= dateTimePicker3.Value
+                             where ord.DateTime >= dateTimePicker2.Value && ord.DateTime <= dateTimePicker3.Value && ord.OrderStatus == false
                              group new { ord, prod, tbl } by new
                              {
                                  prod.ProductName,

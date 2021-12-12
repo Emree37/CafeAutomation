@@ -45,22 +45,22 @@ namespace CafeAutomationCodeFirst.Forms
             // flpCategories
             // 
             this.flpCategories.AutoScroll = true;
-            this.flpCategories.Location = new System.Drawing.Point(12, 31);
+            this.flpCategories.Location = new System.Drawing.Point(50, 31);
             this.flpCategories.Name = "flpCategories";
-            this.flpCategories.Size = new System.Drawing.Size(530, 147);
+            this.flpCategories.Size = new System.Drawing.Size(530, 358);
             this.flpCategories.TabIndex = 0;
             // 
             // flpProducts
             // 
             this.flpProducts.AutoScroll = true;
-            this.flpProducts.Location = new System.Drawing.Point(12, 184);
+            this.flpProducts.Location = new System.Drawing.Point(50, 505);
             this.flpProducts.Name = "flpProducts";
-            this.flpProducts.Size = new System.Drawing.Size(530, 147);
+            this.flpProducts.Size = new System.Drawing.Size(530, 320);
             this.flpProducts.TabIndex = 1;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(13, 372);
+            this.btnCancel.Location = new System.Drawing.Point(674, 400);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(101, 68);
             this.btnCancel.TabIndex = 2;
@@ -70,7 +70,7 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(120, 372);
+            this.btnDelete.Location = new System.Drawing.Point(781, 400);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(101, 68);
             this.btnDelete.TabIndex = 3;
@@ -80,7 +80,7 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(227, 372);
+            this.btnBack.Location = new System.Drawing.Point(888, 400);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(101, 68);
             this.btnBack.TabIndex = 4;
@@ -90,7 +90,7 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             // btnBill
             // 
-            this.btnBill.Location = new System.Drawing.Point(334, 372);
+            this.btnBill.Location = new System.Drawing.Point(995, 400);
             this.btnBill.Name = "btnBill";
             this.btnBill.Size = new System.Drawing.Size(101, 68);
             this.btnBill.TabIndex = 5;
@@ -99,7 +99,7 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             // btnCloseTable
             // 
-            this.btnCloseTable.Location = new System.Drawing.Point(441, 372);
+            this.btnCloseTable.Location = new System.Drawing.Point(1102, 400);
             this.btnCloseTable.Name = "btnCloseTable";
             this.btnCloseTable.Size = new System.Drawing.Size(101, 68);
             this.btnCloseTable.TabIndex = 6;
@@ -113,19 +113,19 @@ namespace CafeAutomationCodeFirst.Forms
             this.dgvOrders.AllowUserToDeleteRows = false;
             this.dgvOrders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrders.Location = new System.Drawing.Point(560, 31);
+            this.dgvOrders.Location = new System.Drawing.Point(674, 31);
             this.dgvOrders.MultiSelect = false;
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.ReadOnly = true;
             this.dgvOrders.RowTemplate.Height = 25;
             this.dgvOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOrders.Size = new System.Drawing.Size(500, 300);
+            this.dgvOrders.Size = new System.Drawing.Size(688, 300);
             this.dgvOrders.TabIndex = 8;
             // 
             // lblTotalPrice
             // 
             this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Location = new System.Drawing.Point(560, 349);
+            this.lblTotalPrice.Location = new System.Drawing.Point(673, 351);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.Size = new System.Drawing.Size(129, 15);
             this.lblTotalPrice.TabIndex = 9;
@@ -133,7 +133,7 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             // btnDecrase
             // 
-            this.btnDecrase.Location = new System.Drawing.Point(919, 337);
+            this.btnDecrase.Location = new System.Drawing.Point(1368, 304);
             this.btnDecrase.Name = "btnDecrase";
             this.btnDecrase.Size = new System.Drawing.Size(66, 27);
             this.btnDecrase.TabIndex = 10;
@@ -145,7 +145,7 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1018, 537);
+            this.ClientSize = new System.Drawing.Size(1850, 920);
             this.Controls.Add(this.btnDecrase);
             this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.dgvOrders);

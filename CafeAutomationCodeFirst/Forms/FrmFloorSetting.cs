@@ -26,7 +26,13 @@ namespace CafeAutomationCodeFirst.Forms
 
         private void FrmFloorSetting_Load(object sender, EventArgs e)
         {
-            lstFloor.DataSource = floorRepository.Get().OrderBy(x => x.FloorOrder)
+            GetFloors();
+        }
+
+        private void GetFloors()
+        {
+            lstFloor.DataSource = null;
+            lstFloor.DataSource = floorRepository.Get(x=>x.IsDeleted == false).OrderBy(x => x.FloorOrder)
                 .ToList();
         }
 
@@ -36,27 +42,25 @@ namespace CafeAutomationCodeFirst.Forms
             {
                 FloorName = txtFloorName.Text,
                 Word = txtWord.Text,
-                FloorOrder = Convert.ToInt32(txtFloorOrder.Text)
+                FloorOrder = Convert.ToInt32(txtFloorOrder.Text),
+                TableCount = Convert.ToInt32(txtTableCount.Text),
+                IsDeleted = false
             };
 
-            int tableCount = Convert.ToInt32(txtTableCount.Text);
-
-            for (int i = 0; i < tableCount; i++)
+            for (int i = 0; i < newFloor.TableCount; i++)
             {
                 Table newTable = new Table()
                 {
                     TableOrder = i + 1,
                     TableName = $"{newFloor.Word}/Masa {i + 1}",
-                    TableStatus = false
+                    TableStatus = false,
+                    IsDeleted = false
                 };
                 newFloor.Tables.Add(newTable);
             }
 
             floorRepository.Add(newFloor);
-            lstFloor.DataSource = null;
-            lstFloor.DataSource = floorRepository.Get()
-                .OrderBy(x => x.FloorOrder).ToList();
-
+            GetFloors();
         }
 
         private Floor selectedFloor;
@@ -68,11 +72,61 @@ namespace CafeAutomationCodeFirst.Forms
             txtFloorName.Text = selectedFloor.FloorName;
             txtFloorOrder.Text = selectedFloor.FloorOrder.ToString();
             txtWord.Text = selectedFloor.Word;
-            //txtTableCount.Text = selectedFloor.Tables.Count().ToString();
+            txtTableCount.Text = selectedFloor.TableCount.ToString();
 
-            var liste = tableRepository.Get().Where(x => x.FloorId == selectedFloor.Id).ToList();
-            txtTableCount.Text = liste.Count().ToString();
+            //var liste = tableRepository.Get().Where(x => x.FloorId == selectedFloor.Id).ToList();
+            //txtTableCount.Text = liste.Count().ToString();
 
+        }
+
+        private void btnFloorDelete_Click(object sender, EventArgs e)
+        {
+            if (selectedFloor == null) return;
+            selectedFloor.IsDeleted = true;
+
+            List<Table> tables = tableRepository.Get().Where(x => x.FloorId == selectedFloor.Id && x.IsDeleted == false).OrderBy(x => x.TableOrder).ToList();
+            foreach (Table table in tables)
+            {
+                table.IsDeleted = true;
+                tableRepository.Update(table);
+            }
+
+            floorRepository.Update(selectedFloor);
+            GetFloors();
+        }
+
+        private void btnFloorUpdate_Click(object sender, EventArgs e)
+        {
+            if (selectedFloor == null) return;
+
+            List<Table> tables = tableRepository.Get().Where(x => x.FloorId == selectedFloor.Id && x.IsDeleted == false).OrderBy(x => x.TableOrder).ToList();
+            foreach (Table table in tables)
+            {
+                table.IsDeleted = true;
+                tableRepository.Update(table);
+            }
+
+            selectedFloor.FloorName = txtFloorName.Text;
+            selectedFloor.FloorOrder = Convert.ToInt32(txtFloorOrder.Text);
+            selectedFloor.Word = txtWord.Text;
+            selectedFloor.TableCount = Convert.ToInt32(txtTableCount.Text);
+
+            for (int i = 0; i < selectedFloor.TableCount; i++)
+            {
+                Table newTable = new Table()
+                {
+                    TableOrder = i + 1,
+                    TableName = $"{selectedFloor.Word}/Masa {i + 1}",
+                    TableStatus = false,
+                    IsDeleted = false
+                };
+                selectedFloor.Tables.Add(newTable);
+            }
+            tableRepository.Save();
+            floorRepository.Update(selectedFloor);
+            floorRepository.Save();
+            GetFloors();
+            
         }
     }
 }

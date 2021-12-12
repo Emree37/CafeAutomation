@@ -43,6 +43,10 @@ namespace CafeAutomationCodeFirst.Forms
             this.btnProductAdd = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnCategoryUpdate = new System.Windows.Forms.Button();
+            this.btnProductUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nFiyat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProduct)).BeginInit();
@@ -50,9 +54,9 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             // btnCategoryAdd
             // 
-            this.btnCategoryAdd.Location = new System.Drawing.Point(108, 299);
+            this.btnCategoryAdd.Location = new System.Drawing.Point(355, 394);
             this.btnCategoryAdd.Name = "btnCategoryAdd";
-            this.btnCategoryAdd.Size = new System.Drawing.Size(157, 67);
+            this.btnCategoryAdd.Size = new System.Drawing.Size(157, 72);
             this.btnCategoryAdd.TabIndex = 0;
             this.btnCategoryAdd.Text = "Kategori Ekle";
             this.btnCategoryAdd.UseVisualStyleBackColor = true;
@@ -61,7 +65,7 @@ namespace CafeAutomationCodeFirst.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 16);
+            this.label1.Location = new System.Drawing.Point(261, 120);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 15);
             this.label1.TabIndex = 1;
@@ -69,26 +73,28 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             // txtCategoryName
             // 
-            this.txtCategoryName.Location = new System.Drawing.Point(108, 13);
+            this.txtCategoryName.Location = new System.Drawing.Point(355, 117);
             this.txtCategoryName.Name = "txtCategoryName";
             this.txtCategoryName.Size = new System.Drawing.Size(157, 23);
             this.txtCategoryName.TabIndex = 2;
             // 
             // pbCategory
             // 
-            this.pbCategory.Location = new System.Drawing.Point(108, 137);
+            this.pbCategory.Location = new System.Drawing.Point(355, 190);
             this.pbCategory.Name = "pbCategory";
-            this.pbCategory.Size = new System.Drawing.Size(157, 141);
+            this.pbCategory.Size = new System.Drawing.Size(157, 177);
+            this.pbCategory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbCategory.TabIndex = 3;
             this.pbCategory.TabStop = false;
+            this.pbCategory.Click += new System.EventHandler(this.pbCategory_Click);
             // 
             // lstCategory
             // 
             this.lstCategory.FormattingEnabled = true;
             this.lstCategory.ItemHeight = 15;
-            this.lstCategory.Location = new System.Drawing.Point(283, 13);
+            this.lstCategory.Location = new System.Drawing.Point(518, 117);
             this.lstCategory.Name = "lstCategory";
-            this.lstCategory.Size = new System.Drawing.Size(135, 244);
+            this.lstCategory.Size = new System.Drawing.Size(183, 424);
             this.lstCategory.TabIndex = 4;
             this.lstCategory.SelectedIndexChanged += new System.EventHandler(this.lstCategory_SelectedIndexChanged);
             // 
@@ -96,15 +102,16 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             this.lstProduct.FormattingEnabled = true;
             this.lstProduct.ItemHeight = 15;
-            this.lstProduct.Location = new System.Drawing.Point(689, 12);
+            this.lstProduct.Location = new System.Drawing.Point(1073, 112);
             this.lstProduct.Name = "lstProduct";
-            this.lstProduct.Size = new System.Drawing.Size(135, 244);
+            this.lstProduct.Size = new System.Drawing.Size(176, 424);
             this.lstProduct.TabIndex = 5;
+            this.lstProduct.SelectedIndexChanged += new System.EventHandler(this.lstProduct_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(437, 16);
+            this.label2.Location = new System.Drawing.Point(831, 117);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 15);
             this.label2.TabIndex = 6;
@@ -113,7 +120,7 @@ namespace CafeAutomationCodeFirst.Forms
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(437, 49);
+            this.label3.Location = new System.Drawing.Point(863, 149);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 15);
             this.label3.TabIndex = 7;
@@ -121,7 +128,7 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(510, 12);
+            this.txtProductName.Location = new System.Drawing.Point(910, 112);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(157, 23);
             this.txtProductName.TabIndex = 8;
@@ -129,7 +136,7 @@ namespace CafeAutomationCodeFirst.Forms
             // nFiyat
             // 
             this.nFiyat.DecimalPlaces = 2;
-            this.nFiyat.Location = new System.Drawing.Point(510, 41);
+            this.nFiyat.Location = new System.Drawing.Point(910, 147);
             this.nFiyat.Name = "nFiyat";
             this.nFiyat.Size = new System.Drawing.Size(157, 23);
             this.nFiyat.TabIndex = 9;
@@ -137,15 +144,17 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             // pbProduct
             // 
-            this.pbProduct.Location = new System.Drawing.Point(510, 70);
+            this.pbProduct.Location = new System.Drawing.Point(910, 190);
             this.pbProduct.Name = "pbProduct";
-            this.pbProduct.Size = new System.Drawing.Size(157, 114);
+            this.pbProduct.Size = new System.Drawing.Size(157, 177);
+            this.pbProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbProduct.TabIndex = 10;
             this.pbProduct.TabStop = false;
+            this.pbProduct.Click += new System.EventHandler(this.pbProduct_Click);
             // 
             // btnProductAdd
             // 
-            this.btnProductAdd.Location = new System.Drawing.Point(510, 190);
+            this.btnProductAdd.Location = new System.Drawing.Point(910, 394);
             this.btnProductAdd.Name = "btnProductAdd";
             this.btnProductAdd.Size = new System.Drawing.Size(157, 67);
             this.btnProductAdd.TabIndex = 11;
@@ -156,7 +165,7 @@ namespace CafeAutomationCodeFirst.Forms
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 49);
+            this.label4.Location = new System.Drawing.Point(274, 153);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 15);
             this.label4.TabIndex = 12;
@@ -164,16 +173,59 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(108, 46);
+            this.txtDescription.Location = new System.Drawing.Point(355, 150);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(157, 23);
             this.txtDescription.TabIndex = 13;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(274, 190);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 15);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "FOTOĞRAF  :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(831, 190);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 15);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "FOTOĞRAF  :";
+            // 
+            // btnCategoryUpdate
+            // 
+            this.btnCategoryUpdate.Location = new System.Drawing.Point(355, 469);
+            this.btnCategoryUpdate.Name = "btnCategoryUpdate";
+            this.btnCategoryUpdate.Size = new System.Drawing.Size(157, 72);
+            this.btnCategoryUpdate.TabIndex = 16;
+            this.btnCategoryUpdate.Text = "GÜNCELLE";
+            this.btnCategoryUpdate.UseVisualStyleBackColor = true;
+            this.btnCategoryUpdate.Click += new System.EventHandler(this.btnCategoryUpdate_Click);
+            // 
+            // btnProductUpdate
+            // 
+            this.btnProductUpdate.Location = new System.Drawing.Point(910, 469);
+            this.btnProductUpdate.Name = "btnProductUpdate";
+            this.btnProductUpdate.Size = new System.Drawing.Size(157, 67);
+            this.btnProductUpdate.TabIndex = 17;
+            this.btnProductUpdate.Text = "Güncelle";
+            this.btnProductUpdate.UseVisualStyleBackColor = true;
+            this.btnProductUpdate.Click += new System.EventHandler(this.btnProductUpdate_Click);
             // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(996, 450);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1434, 658);
+            this.Controls.Add(this.btnProductUpdate);
+            this.Controls.Add(this.btnCategoryUpdate);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnProductAdd);
@@ -215,5 +267,9 @@ namespace CafeAutomationCodeFirst.Forms
         private System.Windows.Forms.Button btnProductAdd;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnCategoryUpdate;
+        private System.Windows.Forms.Button btnProductUpdate;
     }
 }

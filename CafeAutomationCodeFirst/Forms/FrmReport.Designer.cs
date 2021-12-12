@@ -87,7 +87,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.lblDay.AutoSize = true;
             this.lblDay.BackColor = System.Drawing.Color.Transparent;
             this.lblDay.Font = new System.Drawing.Font("Sitka Small", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblDay.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblDay.Location = new System.Drawing.Point(21, 370);
             this.lblDay.Name = "lblDay";
             this.lblDay.Size = new System.Drawing.Size(80, 31);
@@ -99,8 +99,8 @@ namespace CafeAutomationCodeFirst.Forms
             this.lblTotalPrice.AutoSize = true;
             this.lblTotalPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalPrice.Font = new System.Drawing.Font("Sitka Small", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTotalPrice.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblTotalPrice.Location = new System.Drawing.Point(251, 370);
+            this.lblTotalPrice.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTotalPrice.Location = new System.Drawing.Point(469, 369);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.Size = new System.Drawing.Size(80, 31);
             this.lblTotalPrice.TabIndex = 4;
@@ -135,8 +135,8 @@ namespace CafeAutomationCodeFirst.Forms
             this.lblFilterPrice.AutoSize = true;
             this.lblFilterPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblFilterPrice.Font = new System.Drawing.Font("Sitka Small", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblFilterPrice.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblFilterPrice.Location = new System.Drawing.Point(725, 369);
+            this.lblFilterPrice.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblFilterPrice.Location = new System.Drawing.Point(725, 370);
             this.lblFilterPrice.Name = "lblFilterPrice";
             this.lblFilterPrice.Size = new System.Drawing.Size(539, 31);
             this.lblFilterPrice.TabIndex = 9;
@@ -170,8 +170,11 @@ namespace CafeAutomationCodeFirst.Forms
             this.Controls.Add(this.dgvMonthReport);
             this.Controls.Add(this.dgvOrders);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmReport";
             this.Text = "FrmReport";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonthReport)).EndInit();

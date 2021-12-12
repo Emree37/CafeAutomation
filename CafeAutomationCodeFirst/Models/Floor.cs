@@ -17,6 +17,7 @@ namespace CafeAutomationCodeFirst.Models
 
         public string Word { get; set; }
 
+        public int TableCount { get; set; }
 
         public ICollection<Table> Tables { get; set; } = new HashSet<Table>();
 

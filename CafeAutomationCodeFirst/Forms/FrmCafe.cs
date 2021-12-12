@@ -29,7 +29,7 @@ namespace CafeAutomationCodeFirst.Forms
 
         private void FrmCafe_Load(object sender, EventArgs e)
         {
-            List<Floor> floors = floorRepository.Get().ToList();
+            List<Floor> floors = floorRepository.Get(x=>x.IsDeleted == false).OrderBy(x=>x.FloorOrder).ToList();
 
             for (int i = 0; i < floors.Count; i++)
             {
@@ -37,7 +37,7 @@ namespace CafeAutomationCodeFirst.Forms
                 Button btn = new Button()
                 {
                     Text = floor.FloorName,
-                    Size = new Size(140,95),
+                    Size = new Size(250,125),
                     BackColor = defaultFloorColor,
                     Tag = floor
                 };
@@ -60,7 +60,7 @@ namespace CafeAutomationCodeFirst.Forms
             selectedFloor = selectedButton.Tag as Floor;
 
             //List<Table> tables = selectedFloor.Tables.ToList();
-            List<Table> tables = tableRepository.Get().Where(x => x.FloorId == selectedFloor.Id).ToList();
+            List<Table> tables = tableRepository.Get().Where(x => x.FloorId == selectedFloor.Id && x.IsDeleted == false).OrderBy(x=>x.TableOrder).ToList();
 
 
             flpTables.Controls.Clear();
@@ -69,7 +69,7 @@ namespace CafeAutomationCodeFirst.Forms
                 Button btn = new Button()
                 {
                     Text = table.TableName,
-                    Size = new Size(140, 95),
+                    Size = new Size(250, 125),
                     BackColor = defaultFloorColor,
                     Tag = table
                 };
@@ -106,6 +106,12 @@ namespace CafeAutomationCodeFirst.Forms
         }
 
         private FrmOrder frmOrder;
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         private void MasaBtn_Click(object sender, EventArgs e)
         {
             Button selectedButton = sender as Button;

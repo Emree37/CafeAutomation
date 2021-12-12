@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,7 +37,7 @@ namespace CafeAutomationCodeFirst.Forms
 
         private void GetCategories()
         {
-            categories = categoryRepository.Get().ToList();
+            categories = categoryRepository.Get(x=>x.IsDeleted == false).ToList();
             flpCategories.Controls.Clear();
             foreach (Category category in categories)
             {
@@ -44,8 +45,8 @@ namespace CafeAutomationCodeFirst.Forms
                 {
                     Text = category.CategoryName,
                     Size = new Size(220, 150),
-                    //BackgroundImage = Image.FromStream(new MemoryStream(kategori.Fotograf)),
-                    //BackgroundImageLayout = ImageLayout.Stretch,
+                    BackgroundImage = Image.FromStream(new MemoryStream(category.CategoryPicture)),
+                    BackgroundImageLayout = ImageLayout.Stretch,
                     ForeColor = Color.White,
                     Font = new Font(FontFamily.GenericMonospace, 20, FontStyle.Regular),
                     Tag = category
@@ -62,9 +63,7 @@ namespace CafeAutomationCodeFirst.Forms
         {
             Button selectedButton = sender as Button;
             selectedCategory = selectedButton.Tag as Category;
-
-            //List<Product> products = selectedCategory.Products.ToList();
-            List<Product> products = productRepository.Get().Where(x => x.CategoryId == selectedCategory.Id).ToList();
+            List<Product> products = productRepository.Get().Where(x => x.CategoryId == selectedCategory.Id && x.IsDeleted == false).ToList();
 
 
             flpProducts.Controls.Clear();
@@ -74,8 +73,8 @@ namespace CafeAutomationCodeFirst.Forms
                 {
                     Text = product.ProductName,
                     Size = new Size(220, 150),
-                    //BackgroundImage = Image.FromStream(new MemoryStream(urun.Fotograf)),
-                    //BackgroundImageLayout = ImageLayout.Stretch,
+                    BackgroundImage = Image.FromStream(new MemoryStream(product.ProductPicture)),
+                    BackgroundImageLayout = ImageLayout.Stretch,
                     ForeColor = Color.White,
                     Font = new Font(FontFamily.GenericMonospace, 20, FontStyle.Regular),
                     Tag = product
@@ -92,7 +91,7 @@ namespace CafeAutomationCodeFirst.Forms
             selectedProduct = selectedButton.Tag as Product;
 
             var order = orderRepository.Get().FirstOrDefault(x => x.ProductId == selectedProduct.Id &&
-            x.TableId == selectedTable.Id && x.OrderStatus == true); 
+            x.TableId == selectedTable.Id && x.OrderStatus == true && x.IsDeleted == false); 
             if (order == null)
             {
                 Order newOrder = new Order()
@@ -106,6 +105,7 @@ namespace CafeAutomationCodeFirst.Forms
                     DateTimeHour = DateTime.Now.ToString("HH:mm:ss"),
                     TableId = selectedTable.Id,
                     ProductId = selectedProduct.Id,
+                    IsDeleted = false
                 };
                 orderRepository.Add(newOrder);
             }
@@ -124,6 +124,7 @@ namespace CafeAutomationCodeFirst.Forms
             
             var query = from ord in cafeContext.Orders
                         join prod in cafeContext.Products on ord.ProductId equals prod.Id
+                        where ord.IsDeleted == false
                         select new OrderViewModel()
                         {
                             OrderId = ord.Id,
