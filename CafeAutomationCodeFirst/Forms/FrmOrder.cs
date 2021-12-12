@@ -259,40 +259,60 @@ namespace CafeAutomationCodeFirst.Forms
 
         private void btnBill_Click(object sender, EventArgs e)
         {
-            using (System.IO.StreamWriter file =
-         new System.IO.StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"/yazdir.txt", false))
+            PrintDialog printDialog = new PrintDialog();
+            printDialog.Document = printDocument1;
+            printDialog.UseEXDialog = true;
+            printDocument1.Print();
+            Close();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            //Bitmap Adisyon = new Bitmap(this.tableLayoutPanelsepet.Width, this.tableLayoutPanelsepet.Height);
+            //lstCart.DrawToBitmap(Adisyon, new System.Drawing.Rectangle(0, 0, this.tableLayoutPanelsepet.Width, this.tableLayoutPanelsepet.Height));
+
+            //Bitmap lbl = new Bitmap(this.lblToplam.Width, this.lblToplam.Height);
+            //lblToplam.DrawToBitmap(lbl, new System.Drawing.Rectangle(0, 0, this.lblToplam.Width, this.lblToplam.Height));
+
+            //e.Graphics.DrawImage(Adisyon, 135, 65);
+            //e.Graphics.DrawImage(lbl, this.lstCart.Width, this.tableLayoutPanelsepet.Height - 300);
+
+            //------------------------------------------------------------------------------------------------------------------------------------------
+
+            Font font = new Font("Arial", 14);
+            SolidBrush firca = new SolidBrush(Color.Black);
+            Pen kalem = new Pen(Color.Black);
+            e.Graphics.DrawString($"{DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss")}", font, firca, 50, 25);
+            font = new Font("Arial", 20, FontStyle.Bold);
+            e.Graphics.DrawString($"{dgvOrders} Satış Raporu", font, firca, 290, 75);
+            e.Graphics.DrawLine(kalem, 50, 70, 780, 70);
+            e.Graphics.DrawLine(kalem, 50, 110, 780, 110);
+            e.Graphics.DrawLine(kalem, 50, 70, 50, 110);
+            e.Graphics.DrawLine(kalem, 780, 70, 780, 110);
+
+            font = new Font("Arial", 14, FontStyle.Bold);
+
+            e.Graphics.DrawString("Sipariş Tarihi", font, firca, 60, 140);
+            e.Graphics.DrawString("Ürün Adi", font, firca, 280, 140);
+            e.Graphics.DrawString("Birim Fiyatı", font, firca, 420, 140);
+            e.Graphics.DrawString("Adeti", font, firca, 550, 140);
+            e.Graphics.DrawString("Tutarı", font, firca, 680, 140);
+
+            int i = 0;
+            int y = 170;
+            font = new Font("Arial", 14);
+            while (i <= dgvOrders.Rows.Count - 2)
             {
-                file.WriteLine("   ----------  CAFE AUTOMATİON  ----------   ");
-                file.WriteLine("--- Masa Detay : ---");
-                file.WriteLine(" |     Ürün    |    Fiyat    |     Adet   ");
-                string lines = "";
-
-                for (int row = 0; row < 5; row++)
-                {
-                    for (int col = 0; col < 3; col++)
-                    {
-
-                        lines = lines + " | " + dgvOrders.Rows[row].Cells[col].Value.ToString();
-                        if (col == 2)
-                        {
-                            file.WriteLine(lines);
-                            lines = "";
-                        }
-                    }
-
-                }
-                file.WriteLine(" ------------------------");
-                file.WriteLine(" Toplam :" + lblTotalPrice.Text.ToString());
-
+                e.Graphics.DrawString(dgvOrders.Rows[i].Cells[0].Value.ToString(), font, firca, 60, y);
+                e.Graphics.DrawString(dgvOrders.Rows[i].Cells[1].Value.ToString(), font, firca, 280, y);
+                e.Graphics.DrawString($"{dgvOrders.Rows[i].Cells[2].Value:c2}".ToString(), font, firca, 420, y);
+                e.Graphics.DrawString(dgvOrders.Rows[i].Cells[3].Value.ToString(), font, firca, 550, y);
+                e.Graphics.DrawString($"{ dgvOrders.Rows[i].Cells[4].Value:c2}".ToString(), font, firca, 680, y);
+                y = y + 40;
+                i = i + 1;
             }
+            e.Graphics.DrawString($"Toplam Tutar: {dgvOrders.Rows.Cast<DataGridViewRow>().Sum(row => Convert.ToDecimal(row.Cells[4].Value)):c2}".ToString(), font, firca, 550, y + 40);
 
-
-            var pi = new ProcessStartInfo("yazdir.txt");
-            pi.UseShellExecute = true;
-            pi.Verb = "print";
-            //var process = System.Diagnostics.Process.Start(pi);
-
-            MessageBox.Show("YAZDIRILIYOR...");
         }
     }
 }

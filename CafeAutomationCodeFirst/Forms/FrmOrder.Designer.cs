@@ -40,6 +40,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.dgvOrders = new System.Windows.Forms.DataGridView();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.btnDecrase = new System.Windows.Forms.Button();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,6 +151,10 @@ namespace CafeAutomationCodeFirst.Forms
             this.btnDecrase.UseVisualStyleBackColor = true;
             this.btnDecrase.Click += new System.EventHandler(this.btnDecrase_Click);
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
             // FrmOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -187,5 +192,6 @@ namespace CafeAutomationCodeFirst.Forms
         private System.Windows.Forms.DataGridView dgvOrders;
         private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.Button btnDecrase;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }
