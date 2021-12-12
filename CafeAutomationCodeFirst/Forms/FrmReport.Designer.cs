@@ -39,6 +39,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.lblFilterPrice = new System.Windows.Forms.Label();
+            this.btnFilter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonthReport)).BeginInit();
             this.SuspendLayout();
@@ -115,7 +116,6 @@ namespace CafeAutomationCodeFirst.Forms
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(179, 23);
             this.dateTimePicker2.TabIndex = 6;
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // dateTimePicker3
             // 
@@ -123,7 +123,6 @@ namespace CafeAutomationCodeFirst.Forms
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(179, 23);
             this.dateTimePicker3.TabIndex = 7;
-            this.dateTimePicker3.ValueChanged += new System.EventHandler(this.dateTimePicker3_ValueChanged);
             // 
             // lblFilterPrice
             // 
@@ -134,6 +133,16 @@ namespace CafeAutomationCodeFirst.Forms
             this.lblFilterPrice.TabIndex = 9;
             this.lblFilterPrice.Text = "SEÇİLİ GÜNLER ARASI TOPLAM CİRO :     0.00₺";
             // 
+            // btnFilter
+            // 
+            this.btnFilter.Location = new System.Drawing.Point(1095, 20);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(75, 23);
+            this.btnFilter.TabIndex = 10;
+            this.btnFilter.Text = "FİLTRELE";
+            this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            // 
             // FrmReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -141,6 +150,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1446, 822);
+            this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.lblFilterPrice);
             this.Controls.Add(this.dateTimePicker3);
             this.Controls.Add(this.dateTimePicker2);
@@ -171,5 +181,6 @@ namespace CafeAutomationCodeFirst.Forms
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.Label lblFilterPrice;
+        private System.Windows.Forms.Button btnFilter;
     }
 }
