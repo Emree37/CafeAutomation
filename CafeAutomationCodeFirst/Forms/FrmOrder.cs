@@ -141,8 +141,14 @@ namespace CafeAutomationCodeFirst.Forms
             
             dgvOrders.DataSource = null;
             dgvOrders.DataSource = liste;
-            //dgvOrders.Columns["ProductId"].Visible = false;
-            //dgvOrders.Columns["ProductId"].Visible = false;
+            dgvOrders.Columns["OrderId"].Visible = false;
+            dgvOrders.Columns["OrderStatus"].Visible = false;
+            dgvOrders.Columns["ProductId"].Visible = false;
+            dgvOrders.Columns["TableId"].Visible = false;
+            dgvOrders.Columns[2].HeaderText = "ÜRÜN ADI";
+            dgvOrders.Columns[3].HeaderText = "ADET";
+            dgvOrders.Columns[4].HeaderText = "FİYAT";
+            dgvOrders.Columns[5].HeaderText = "ARA TOPLAM";
             dgvOrders.ClearSelection();
 
             decimal totalPrice = 0;
@@ -161,29 +167,44 @@ namespace CafeAutomationCodeFirst.Forms
 
         private void btnDecrase_Click(object sender, EventArgs e)
         {
-            var selected = dgvOrders.SelectedRows[0];
-            int selectedOrderId = Convert.ToInt32(selected.Cells[0].Value);
-            var order = orderRepository.Get().FirstOrDefault(x => x.Id == selectedOrderId);
+            try
+            {
+                var selected = dgvOrders.SelectedRows[0];
+                int selectedOrderId = Convert.ToInt32(selected.Cells[0].Value);
+                var order = orderRepository.Get().FirstOrDefault(x => x.Id == selectedOrderId);
 
-            if(order.Quantity == 1)
-            {
-                orderRepository.Remove(order);
+                if (order.Quantity == 1)
+                {
+                    orderRepository.Remove(order);
+                }
+                else
+                {
+                    order.Quantity--;
+                    order.SubTotal = order.Quantity * order.Price;
+                    orderRepository.Update(order);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                order.Quantity--;
-                order.SubTotal = order.Quantity * order.Price;
-                orderRepository.Update(order);
+                MessageBox.Show("Lütfen Azaltacağınız Siparişi Seçiniz");
             }
+            
             GetOrders();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            var selected = dgvOrders.SelectedRows[0];
-            int selectedOrderId = Convert.ToInt32(selected.Cells[0].Value);
-            var order = orderRepository.Get().FirstOrDefault(x => x.Id == selectedOrderId);
-            orderRepository.Remove(order);
+            try
+            {
+                var selected = dgvOrders.SelectedRows[0];
+                int selectedOrderId = Convert.ToInt32(selected.Cells[0].Value);
+                var order = orderRepository.Get().FirstOrDefault(x => x.Id == selectedOrderId);
+                orderRepository.Remove(order);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lütfen Sileceğiniz Siparişi Seçiniz");
+            }
             GetOrders();
         }
 

@@ -29,6 +29,7 @@ namespace CafeAutomationCodeFirst.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOrder));
             this.flpCategories = new System.Windows.Forms.FlowLayoutPanel();
             this.flpProducts = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -60,50 +61,55 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(674, 400);
+            this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancel.Location = new System.Drawing.Point(673, 400);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(101, 68);
+            this.btnCancel.Size = new System.Drawing.Size(150, 100);
             this.btnCancel.TabIndex = 2;
-            this.btnCancel.Text = "İPTAL";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(781, 400);
+            this.btnDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelete.BackgroundImage")));
+            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDelete.Location = new System.Drawing.Point(854, 400);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(101, 68);
+            this.btnDelete.Size = new System.Drawing.Size(150, 100);
             this.btnDelete.TabIndex = 3;
-            this.btnDelete.Text = "SİL";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(888, 400);
+            this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBack.Location = new System.Drawing.Point(1722, 825);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(101, 68);
             this.btnBack.TabIndex = 4;
-            this.btnBack.Text = "GERİ";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnBill
             // 
-            this.btnBill.Location = new System.Drawing.Point(995, 400);
+            this.btnBill.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBill.BackgroundImage")));
+            this.btnBill.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBill.Location = new System.Drawing.Point(1035, 400);
             this.btnBill.Name = "btnBill";
-            this.btnBill.Size = new System.Drawing.Size(101, 68);
+            this.btnBill.Size = new System.Drawing.Size(150, 100);
             this.btnBill.TabIndex = 5;
-            this.btnBill.Text = "ADİSYON";
             this.btnBill.UseVisualStyleBackColor = true;
             // 
             // btnCloseTable
             // 
-            this.btnCloseTable.Location = new System.Drawing.Point(1102, 400);
+            this.btnCloseTable.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCloseTable.BackgroundImage")));
+            this.btnCloseTable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCloseTable.Location = new System.Drawing.Point(1216, 400);
             this.btnCloseTable.Name = "btnCloseTable";
-            this.btnCloseTable.Size = new System.Drawing.Size(101, 68);
+            this.btnCloseTable.Size = new System.Drawing.Size(150, 100);
             this.btnCloseTable.TabIndex = 6;
-            this.btnCloseTable.Text = "MASAYI KAPAT";
             this.btnCloseTable.UseVisualStyleBackColor = true;
             this.btnCloseTable.Click += new System.EventHandler(this.btnCloseTable_Click);
             // 
@@ -113,31 +119,33 @@ namespace CafeAutomationCodeFirst.Forms
             this.dgvOrders.AllowUserToDeleteRows = false;
             this.dgvOrders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrders.Location = new System.Drawing.Point(674, 31);
+            this.dgvOrders.Location = new System.Drawing.Point(673, 31);
             this.dgvOrders.MultiSelect = false;
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.ReadOnly = true;
             this.dgvOrders.RowTemplate.Height = 25;
             this.dgvOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOrders.Size = new System.Drawing.Size(688, 300);
+            this.dgvOrders.Size = new System.Drawing.Size(693, 300);
             this.dgvOrders.TabIndex = 8;
             // 
             // lblTotalPrice
             // 
             this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Location = new System.Drawing.Point(673, 351);
+            this.lblTotalPrice.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTotalPrice.Location = new System.Drawing.Point(673, 367);
             this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(129, 15);
+            this.lblTotalPrice.Size = new System.Drawing.Size(236, 22);
             this.lblTotalPrice.TabIndex = 9;
             this.lblTotalPrice.Text = "TOPLAM TUTAR :  0.00₺";
             // 
             // btnDecrase
             // 
-            this.btnDecrase.Location = new System.Drawing.Point(1368, 304);
+            this.btnDecrase.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDecrase.BackgroundImage")));
+            this.btnDecrase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDecrase.Location = new System.Drawing.Point(1379, 268);
             this.btnDecrase.Name = "btnDecrase";
-            this.btnDecrase.Size = new System.Drawing.Size(66, 27);
+            this.btnDecrase.Size = new System.Drawing.Size(76, 63);
             this.btnDecrase.TabIndex = 10;
-            this.btnDecrase.Text = "AZALT";
             this.btnDecrase.UseVisualStyleBackColor = true;
             this.btnDecrase.Click += new System.EventHandler(this.btnDecrase_Click);
             // 

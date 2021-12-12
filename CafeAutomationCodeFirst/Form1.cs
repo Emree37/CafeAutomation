@@ -66,7 +66,15 @@ namespace CafeAutomationCodeFirst
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-
+            var result = MessageBox.Show("Programı kapatmak istiyor musunuz?", "Dikkat", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

@@ -68,6 +68,10 @@ namespace CafeAutomationCodeFirst.Forms
             dgvOrders.Columns["OrderStatus"].Visible = false;
             dgvOrders.Columns["DateTimeDay"].Visible = false;
             dgvOrders.Columns["DateTimeHour"].Visible = false;
+            dgvOrders.Columns[0].HeaderText = "MASA İSMİ";
+            dgvOrders.Columns[1].HeaderText = "ÜRÜN ADI";
+            dgvOrders.Columns[2].HeaderText = "ARA TOPLAM";
+            dgvOrders.Columns[4].HeaderText = "TARİH";
 
             toplam = 0;
             foreach (var item in liste)
@@ -136,6 +140,8 @@ namespace CafeAutomationCodeFirst.Forms
             dgvMonthReport.Columns["DateTime"].Visible = false;
             dgvMonthReport.Columns["DateTimeDay"].Visible = false;
             dgvMonthReport.Columns["DateTimeHour"].Visible = false;
+            dgvMonthReport.Columns[1].HeaderText = "ÜRÜN ADI";
+            dgvMonthReport.Columns[2].HeaderText = "TOPLAM SATIŞ";
 
             toplam = 0;
             foreach (var item in liste)
@@ -195,6 +201,8 @@ namespace CafeAutomationCodeFirst.Forms
                 dgvMonthReport.Columns["DateTime"].Visible = false;
                 dgvMonthReport.Columns["DateTimeDay"].Visible = false;
                 dgvMonthReport.Columns["DateTimeHour"].Visible = false;
+                dgvMonthReport.Columns[1].HeaderText = "ÜRÜN ADI";
+                dgvMonthReport.Columns[2].HeaderText = "TOPLAM SATIŞ";
 
                 toplam = 0;
                 foreach (var item in liste2)
@@ -230,6 +238,8 @@ namespace CafeAutomationCodeFirst.Forms
                 dgvMonthReport.Columns["DateTime"].Visible = false;
                 dgvMonthReport.Columns["DateTimeDay"].Visible = false;
                 dgvMonthReport.Columns["DateTimeHour"].Visible = false;
+                dgvMonthReport.Columns[1].HeaderText = "ÜRÜN ADI";
+                dgvMonthReport.Columns[2].HeaderText = "TOPLAM SATIŞ";
 
                 toplam = 0;
                 foreach (var item in liste)
