@@ -19,22 +19,24 @@ namespace CafeAutomationCodeFirst
         }
 
         private FrmMenu frmMenu;
-        private void mENÜToolStripMenuItem_Click(object sender, EventArgs e)
+        private FrmFloorSetting frmFloorSetting;
+        private FrmCafe frmCafe;
+        private FrmReport frmReport;
+
+        private void btnMenu_Click(object sender, EventArgs e)
         {
-            if(frmMenu == null || frmMenu.IsDisposed)
+            if (frmMenu == null || frmMenu.IsDisposed)
             {
                 frmMenu = new FrmMenu();
             }
             //frmMenu.MdiParent = this;
             frmMenu.Show();
             frmMenu.WindowState = FormWindowState.Maximized;
-            
         }
 
-        private FrmFloorSetting frmFloorSetting;
-        private void kATMASAAYARLARIToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnFloorTable_Click(object sender, EventArgs e)
         {
-            if(frmFloorSetting == null || frmFloorSetting.IsDisposed)
+            if (frmFloorSetting == null || frmFloorSetting.IsDisposed)
             {
                 frmFloorSetting = new FrmFloorSetting();
             }
@@ -42,8 +44,7 @@ namespace CafeAutomationCodeFirst
             frmFloorSetting.WindowState = FormWindowState.Maximized;
         }
 
-        private FrmCafe frmCafe;
-        private void kAFEToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnCafe_Click(object sender, EventArgs e)
         {
             if (frmCafe == null || frmCafe.IsDisposed)
             {
@@ -53,8 +54,7 @@ namespace CafeAutomationCodeFirst
             frmCafe.WindowState = FormWindowState.Maximized;
         }
 
-        private FrmReport frmReport;
-        private void rAPORToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnReport_Click(object sender, EventArgs e)
         {
             if (frmReport == null || frmReport.IsDisposed)
             {
@@ -62,6 +62,11 @@ namespace CafeAutomationCodeFirst
             }
             frmReport.Show();
             frmReport.WindowState = FormWindowState.Maximized;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

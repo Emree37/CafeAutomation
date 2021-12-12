@@ -85,18 +85,24 @@ namespace CafeAutomationCodeFirst.Forms
             // lblDay
             // 
             this.lblDay.AutoSize = true;
+            this.lblDay.BackColor = System.Drawing.Color.Transparent;
+            this.lblDay.Font = new System.Drawing.Font("Sitka Small", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblDay.Location = new System.Drawing.Point(21, 370);
             this.lblDay.Name = "lblDay";
-            this.lblDay.Size = new System.Drawing.Size(38, 15);
+            this.lblDay.Size = new System.Drawing.Size(80, 31);
             this.lblDay.TabIndex = 3;
             this.lblDay.Text = "label1";
             // 
             // lblTotalPrice
             // 
             this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalPrice.Font = new System.Drawing.Font("Sitka Small", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTotalPrice.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblTotalPrice.Location = new System.Drawing.Point(251, 370);
             this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(38, 15);
+            this.lblTotalPrice.Size = new System.Drawing.Size(80, 31);
             this.lblTotalPrice.TabIndex = 4;
             this.lblTotalPrice.Text = "label1";
             // 
@@ -127,17 +133,20 @@ namespace CafeAutomationCodeFirst.Forms
             // lblFilterPrice
             // 
             this.lblFilterPrice.AutoSize = true;
+            this.lblFilterPrice.BackColor = System.Drawing.Color.Transparent;
+            this.lblFilterPrice.Font = new System.Drawing.Font("Sitka Small", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblFilterPrice.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblFilterPrice.Location = new System.Drawing.Point(725, 369);
             this.lblFilterPrice.Name = "lblFilterPrice";
-            this.lblFilterPrice.Size = new System.Drawing.Size(248, 15);
+            this.lblFilterPrice.Size = new System.Drawing.Size(539, 31);
             this.lblFilterPrice.TabIndex = 9;
             this.lblFilterPrice.Text = "SEÇİLİ GÜNLER ARASI TOPLAM CİRO :     0.00₺";
             // 
             // btnFilter
             // 
-            this.btnFilter.Location = new System.Drawing.Point(1095, 20);
+            this.btnFilter.Location = new System.Drawing.Point(1107, 18);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(75, 23);
+            this.btnFilter.Size = new System.Drawing.Size(82, 23);
             this.btnFilter.TabIndex = 10;
             this.btnFilter.Text = "FİLTRELE";
             this.btnFilter.UseVisualStyleBackColor = true;
@@ -160,6 +169,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.dgvMonthReport);
             this.Controls.Add(this.dgvOrders);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "FrmReport";
             this.Text = "FrmReport";
             this.Load += new System.EventHandler(this.FrmReport_Load);
