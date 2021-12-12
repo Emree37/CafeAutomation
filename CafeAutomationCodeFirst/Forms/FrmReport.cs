@@ -35,8 +35,8 @@ namespace CafeAutomationCodeFirst.Forms
             dateTimePicker3.Format = DateTimePickerFormat.Custom;
             dateTimePicker3.CustomFormat = "dd/MM/yyyy";
             DayReport();
-
-
+            FilterLoad();
+            
         }
 
         private decimal toplam = 0;
@@ -88,7 +88,7 @@ namespace CafeAutomationCodeFirst.Forms
             Close();
         }
 
-        private void btnFilter_Click(object sender, EventArgs e)
+        private void FilterLoad()
         {
             var query = from ord in cafeContext.Orders
                         join prod in cafeContext.Products on ord.ProductId equals prod.Id
@@ -107,7 +107,7 @@ namespace CafeAutomationCodeFirst.Forms
                             DateTimeHour = ord.DateTimeHour
                         };
 
-            var liste = query.Where(x=>x.DateTime >= dateTimePicker2.Value && x.DateTime <= dateTimePicker3.Value).OrderByDescending(x=>x.DateTimeDay).ThenByDescending(x=>x.DateTimeHour).ToList();
+            var liste = query.Where(x => x.DateTimeDay == dateTimePicker2.Value.ToString("dd/MM/yyyy")).OrderByDescending(x => x.DateTimeDay).ThenByDescending(x => x.DateTimeHour).ToList();
 
             dgvMonthReport.DataSource = null;
             dgvMonthReport.DataSource = liste;
@@ -120,6 +120,50 @@ namespace CafeAutomationCodeFirst.Forms
                 toplam += item.SubTotal;
             }
             lblFilterPrice.Text = $"SEÇİLİ GÜNLER ARASI TOPLAM CİRO :     {toplam}₺";
+        }  //Form Yüklenirken O Güne Ait Rapor
+        
+        private void MonthFilter()
+        {
+            var query = from ord in cafeContext.Orders
+                        join prod in cafeContext.Products on ord.ProductId equals prod.Id
+                        join tbl in cafeContext.Tables on ord.TableId equals tbl.Id
+                        select new ReportViewModel()
+                        {
+                            //OrderId = ord.Id,
+                            //ProductId = ord.ProductId,
+                            TableName = tbl.TableName,
+                            ProductName = prod.ProductName,
+                            SubTotal = ord.SubTotal,
+                            //TableId = ord.TableId,
+                            OrderStatus = ord.OrderStatus,
+                            DateTime = ord.DateTime,
+                            DateTimeDay = ord.DateTimeDay,
+                            DateTimeHour = ord.DateTimeHour
+                        };
+
+            var liste = query.Where(x => x.DateTime >= dateTimePicker2.Value && x.DateTime <= dateTimePicker3.Value).OrderByDescending(x => x.DateTimeDay).ThenByDescending(x => x.DateTimeHour).ToList();
+
+            dgvMonthReport.DataSource = null;
+            dgvMonthReport.DataSource = liste;
+            dgvMonthReport.Columns["OrderStatus"].Visible = false;
+            dgvMonthReport.Columns["DateTime"].Visible = false;
+            dgvMonthReport.Columns["DateTimeHour"].Visible = false;
+            toplam = 0;
+            foreach (var item in liste)
+            {
+                toplam += item.SubTotal;
+            }
+            lblFilterPrice.Text = $"SEÇİLİ GÜNLER ARASI TOPLAM CİRO :     {toplam}₺";
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            MonthFilter();
+        }
+
+        private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
+        {
+            MonthFilter();
         }
     }
 }

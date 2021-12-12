@@ -38,7 +38,6 @@ namespace CafeAutomationCodeFirst.Forms
             this.btnBack = new System.Windows.Forms.Button();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.btnFilter = new System.Windows.Forms.Button();
             this.lblFilterPrice = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonthReport)).BeginInit();
@@ -116,6 +115,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(179, 23);
             this.dateTimePicker2.TabIndex = 6;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // dateTimePicker3
             // 
@@ -123,16 +123,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(179, 23);
             this.dateTimePicker3.TabIndex = 7;
-            // 
-            // btnFilter
-            // 
-            this.btnFilter.Location = new System.Drawing.Point(1113, 18);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(140, 23);
-            this.btnFilter.TabIndex = 8;
-            this.btnFilter.Text = "FİLTRELE";
-            this.btnFilter.UseVisualStyleBackColor = true;
-            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            this.dateTimePicker3.ValueChanged += new System.EventHandler(this.dateTimePicker3_ValueChanged);
             // 
             // lblFilterPrice
             // 
@@ -151,7 +142,6 @@ namespace CafeAutomationCodeFirst.Forms
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1446, 822);
             this.Controls.Add(this.lblFilterPrice);
-            this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.dateTimePicker3);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.btnBack);
@@ -180,7 +170,6 @@ namespace CafeAutomationCodeFirst.Forms
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.Label lblFilterPrice;
     }
 }
