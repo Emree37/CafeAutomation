@@ -284,7 +284,7 @@ namespace CafeAutomationCodeFirst.Forms
             Pen kalem = new Pen(Color.Black);
             e.Graphics.DrawString($"{DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss")}", font, firca, 50, 25);
             font = new Font("Arial", 20, FontStyle.Bold);
-            e.Graphics.DrawString($"{dgvOrders} Satış Raporu", font, firca, 290, 75);
+            e.Graphics.DrawString($"Satış Raporu", font, firca, 290, 75);
             e.Graphics.DrawLine(kalem, 50, 70, 780, 70);
             e.Graphics.DrawLine(kalem, 50, 110, 780, 110);
             e.Graphics.DrawLine(kalem, 50, 70, 50, 110);
@@ -292,26 +292,24 @@ namespace CafeAutomationCodeFirst.Forms
 
             font = new Font("Arial", 14, FontStyle.Bold);
 
-            e.Graphics.DrawString("Sipariş Tarihi", font, firca, 60, 140);
-            e.Graphics.DrawString("Ürün Adi", font, firca, 280, 140);
-            e.Graphics.DrawString("Birim Fiyatı", font, firca, 420, 140);
-            e.Graphics.DrawString("Adeti", font, firca, 550, 140);
-            e.Graphics.DrawString("Tutarı", font, firca, 680, 140);
+            e.Graphics.DrawString("ÜRÜN ADI", font, firca, 280, 140);
+            e.Graphics.DrawString("ADETİ", font, firca, 420, 140);
+            e.Graphics.DrawString("FİYATI", font, firca, 550, 140);
+            e.Graphics.DrawString("ARA TOPLAM", font, firca, 680, 140);
 
             int i = 0;
             int y = 170;
             font = new Font("Arial", 14);
-            while (i <= dgvOrders.Rows.Count - 2)
+            while (i <= dgvOrders.Rows.Count - 1)
             {
-                e.Graphics.DrawString(dgvOrders.Rows[i].Cells[0].Value.ToString(), font, firca, 60, y);
-                e.Graphics.DrawString(dgvOrders.Rows[i].Cells[1].Value.ToString(), font, firca, 280, y);
-                e.Graphics.DrawString($"{dgvOrders.Rows[i].Cells[2].Value:c2}".ToString(), font, firca, 420, y);
-                e.Graphics.DrawString(dgvOrders.Rows[i].Cells[3].Value.ToString(), font, firca, 550, y);
-                e.Graphics.DrawString($"{ dgvOrders.Rows[i].Cells[4].Value:c2}".ToString(), font, firca, 680, y);
+                e.Graphics.DrawString(dgvOrders.Rows[i].Cells[2].Value.ToString(), font, firca, 280, y);
+                e.Graphics.DrawString($"{dgvOrders.Rows[i].Cells[1].Value}".ToString(), font, firca, 420, y);
+                e.Graphics.DrawString($"{dgvOrders.Rows[i].Cells[4].Value:c2}", font, firca, 550, y);
+                e.Graphics.DrawString($"{ dgvOrders.Rows[i].Cells[5].Value:c2}".ToString(), font, firca, 680, y);
                 y = y + 40;
                 i = i + 1;
             }
-            e.Graphics.DrawString($"Toplam Tutar: {dgvOrders.Rows.Cast<DataGridViewRow>().Sum(row => Convert.ToDecimal(row.Cells[4].Value)):c2}".ToString(), font, firca, 550, y + 40);
+            e.Graphics.DrawString($"Toplam Tutar: {dgvOrders.Rows.Cast<DataGridViewRow>().Sum(row => Convert.ToDecimal(row.Cells[5].Value)):c2}".ToString(), font, firca, 550, y + 40);
 
         }
     }
