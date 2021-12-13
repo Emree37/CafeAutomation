@@ -51,7 +51,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(549, 195);
+            this.label1.Location = new System.Drawing.Point(150, 96);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 25);
@@ -64,7 +64,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(564, 243);
+            this.label2.Location = new System.Drawing.Point(165, 144);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 25);
@@ -77,7 +77,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(564, 297);
+            this.label3.Location = new System.Drawing.Point(165, 198);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 25);
@@ -90,7 +90,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(501, 345);
+            this.label4.Location = new System.Drawing.Point(102, 246);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(148, 25);
@@ -99,7 +99,7 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             // txtFloorName
             // 
-            this.txtFloorName.Location = new System.Drawing.Point(653, 195);
+            this.txtFloorName.Location = new System.Drawing.Point(254, 96);
             this.txtFloorName.Margin = new System.Windows.Forms.Padding(5);
             this.txtFloorName.Name = "txtFloorName";
             this.txtFloorName.Size = new System.Drawing.Size(169, 38);
@@ -107,7 +107,7 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             // txtTableCount
             // 
-            this.txtTableCount.Location = new System.Drawing.Point(653, 340);
+            this.txtTableCount.Location = new System.Drawing.Point(254, 241);
             this.txtTableCount.Margin = new System.Windows.Forms.Padding(5);
             this.txtTableCount.Name = "txtTableCount";
             this.txtTableCount.Size = new System.Drawing.Size(169, 38);
@@ -115,7 +115,7 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             // txtWord
             // 
-            this.txtWord.Location = new System.Drawing.Point(653, 292);
+            this.txtWord.Location = new System.Drawing.Point(254, 193);
             this.txtWord.Margin = new System.Windows.Forms.Padding(5);
             this.txtWord.Name = "txtWord";
             this.txtWord.Size = new System.Drawing.Size(169, 38);
@@ -123,7 +123,7 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             // txtFloorOrder
             // 
-            this.txtFloorOrder.Location = new System.Drawing.Point(653, 243);
+            this.txtFloorOrder.Location = new System.Drawing.Point(254, 144);
             this.txtFloorOrder.Margin = new System.Windows.Forms.Padding(5);
             this.txtFloorOrder.Name = "txtFloorOrder";
             this.txtFloorOrder.Size = new System.Drawing.Size(169, 38);
@@ -133,10 +133,10 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             this.btnFloorAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFloorAdd.BackgroundImage")));
             this.btnFloorAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFloorAdd.Location = new System.Drawing.Point(1265, 195);
+            this.btnFloorAdd.Location = new System.Drawing.Point(866, 96);
             this.btnFloorAdd.Margin = new System.Windows.Forms.Padding(5);
             this.btnFloorAdd.Name = "btnFloorAdd";
-            this.btnFloorAdd.Size = new System.Drawing.Size(238, 168);
+            this.btnFloorAdd.Size = new System.Drawing.Size(213, 146);
             this.btnFloorAdd.TabIndex = 8;
             this.btnFloorAdd.UseVisualStyleBackColor = true;
             this.btnFloorAdd.Click += new System.EventHandler(this.btnFloorAdd_Click);
@@ -145,10 +145,10 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             this.lstFloor.FormattingEnabled = true;
             this.lstFloor.ItemHeight = 25;
-            this.lstFloor.Location = new System.Drawing.Point(876, 195);
+            this.lstFloor.Location = new System.Drawing.Point(477, 96);
             this.lstFloor.Margin = new System.Windows.Forms.Padding(5);
             this.lstFloor.Name = "lstFloor";
-            this.lstFloor.Size = new System.Drawing.Size(357, 529);
+            this.lstFloor.Size = new System.Drawing.Size(332, 504);
             this.lstFloor.TabIndex = 9;
             this.lstFloor.SelectedIndexChanged += new System.EventHandler(this.lstFloor_SelectedIndexChanged);
             // 
@@ -156,10 +156,10 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             this.btnFloorUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFloorUpdate.BackgroundImage")));
             this.btnFloorUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFloorUpdate.Location = new System.Drawing.Point(1265, 397);
+            this.btnFloorUpdate.Location = new System.Drawing.Point(866, 289);
             this.btnFloorUpdate.Margin = new System.Windows.Forms.Padding(5);
             this.btnFloorUpdate.Name = "btnFloorUpdate";
-            this.btnFloorUpdate.Size = new System.Drawing.Size(238, 150);
+            this.btnFloorUpdate.Size = new System.Drawing.Size(213, 128);
             this.btnFloorUpdate.TabIndex = 10;
             this.btnFloorUpdate.UseVisualStyleBackColor = true;
             this.btnFloorUpdate.Click += new System.EventHandler(this.btnFloorUpdate_Click);
@@ -168,10 +168,10 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             this.btnFloorDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFloorDelete.BackgroundImage")));
             this.btnFloorDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFloorDelete.Location = new System.Drawing.Point(1265, 582);
+            this.btnFloorDelete.Location = new System.Drawing.Point(866, 483);
             this.btnFloorDelete.Margin = new System.Windows.Forms.Padding(5);
             this.btnFloorDelete.Name = "btnFloorDelete";
-            this.btnFloorDelete.Size = new System.Drawing.Size(238, 145);
+            this.btnFloorDelete.Size = new System.Drawing.Size(213, 123);
             this.btnFloorDelete.TabIndex = 11;
             this.btnFloorDelete.UseVisualStyleBackColor = true;
             this.btnFloorDelete.Click += new System.EventHandler(this.btnFloorDelete_Click);
@@ -180,9 +180,9 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBack.Location = new System.Drawing.Point(1749, 848);
+            this.btnBack.Location = new System.Drawing.Point(1128, 610);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(153, 103);
+            this.btnBack.Size = new System.Drawing.Size(137, 94);
             this.btnBack.TabIndex = 12;
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -192,7 +192,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1924, 1061);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnFloorDelete);
             this.Controls.Add(this.btnFloorUpdate);

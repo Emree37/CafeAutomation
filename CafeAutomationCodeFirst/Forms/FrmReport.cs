@@ -181,7 +181,7 @@ namespace CafeAutomationCodeFirst.Forms
                 var query3 = from ord in cafeContext.Orders
                              join prod in cafeContext.Products on ord.ProductId equals prod.Id
                              join tbl in cafeContext.Tables on ord.TableId equals tbl.Id
-                             where ord.DateTimeDay == dateTimePicker2.Value.ToString("dd/MM/yyyy")
+                             where ord.DateTimeDay == dateTimePicker2.Value.ToString("dd/MM/yyyy") && ord.OrderStatus == false
                              group new { ord, prod, tbl } by new
                              {
                                  prod.ProductName,
@@ -229,7 +229,7 @@ namespace CafeAutomationCodeFirst.Forms
                              };
 
                 var liste = query2.ToList();
-                //var liste = query.Where(x => x.DateTime >= dateTimePicker2.Value && x.DateTime <= dateTimePicker3.Value).OrderByDescending(x => x.DateTimeDay).ThenByDescending(x => x.DateTimeHour).ToList();
+
 
                 dgvMonthReport.DataSource = null;
                 dgvMonthReport.DataSource = liste;

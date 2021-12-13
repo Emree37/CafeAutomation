@@ -43,7 +43,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.flpFloors.BackColor = System.Drawing.Color.Transparent;
             this.flpFloors.Location = new System.Drawing.Point(0, 0);
             this.flpFloors.Name = "flpFloors";
-            this.flpFloors.Size = new System.Drawing.Size(1766, 0);
+            this.flpFloors.Size = new System.Drawing.Size(1370, 0);
             this.flpFloors.TabIndex = 0;
             // 
             // flpTables
@@ -52,16 +52,16 @@ namespace CafeAutomationCodeFirst.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flpTables.AutoScroll = true;
             this.flpTables.BackColor = System.Drawing.Color.Transparent;
-            this.flpTables.Location = new System.Drawing.Point(12, 144);
+            this.flpTables.Location = new System.Drawing.Point(13, 127);
             this.flpTables.Name = "flpTables";
-            this.flpTables.Size = new System.Drawing.Size(1741, 750);
+            this.flpTables.Size = new System.Drawing.Size(1345, 485);
             this.flpTables.TabIndex = 1;
             // 
             // btnBack
             // 
             this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBack.Location = new System.Drawing.Point(1631, 939);
+            this.btnBack.Location = new System.Drawing.Point(1236, 618);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(122, 91);
             this.btnBack.TabIndex = 2;
@@ -73,7 +73,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1766, 1061);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.flpTables);
             this.Controls.Add(this.flpFloors);

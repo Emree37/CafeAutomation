@@ -47,26 +47,26 @@ namespace CafeAutomationCodeFirst.Forms
             // flpCategories
             // 
             this.flpCategories.AutoScroll = true;
-            this.flpCategories.Location = new System.Drawing.Point(50, 31);
+            this.flpCategories.Location = new System.Drawing.Point(50, 61);
             this.flpCategories.Name = "flpCategories";
-            this.flpCategories.Size = new System.Drawing.Size(530, 358);
+            this.flpCategories.Size = new System.Drawing.Size(463, 328);
             this.flpCategories.TabIndex = 0;
             // 
             // flpProducts
             // 
             this.flpProducts.AutoScroll = true;
-            this.flpProducts.Location = new System.Drawing.Point(50, 505);
+            this.flpProducts.Location = new System.Drawing.Point(50, 430);
             this.flpProducts.Name = "flpProducts";
-            this.flpProducts.Size = new System.Drawing.Size(530, 320);
+            this.flpProducts.Size = new System.Drawing.Size(463, 290);
             this.flpProducts.TabIndex = 1;
             // 
             // btnCancel
             // 
             this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancel.Location = new System.Drawing.Point(673, 400);
+            this.btnCancel.Location = new System.Drawing.Point(673, 430);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(150, 100);
+            this.btnCancel.Size = new System.Drawing.Size(131, 86);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -75,9 +75,9 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             this.btnDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelete.BackgroundImage")));
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDelete.Location = new System.Drawing.Point(854, 400);
+            this.btnDelete.Location = new System.Drawing.Point(846, 430);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(150, 100);
+            this.btnDelete.Size = new System.Drawing.Size(131, 86);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -86,9 +86,9 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBack.Location = new System.Drawing.Point(1722, 825);
+            this.btnBack.Location = new System.Drawing.Point(1257, 569);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(101, 68);
+            this.btnBack.Size = new System.Drawing.Size(90, 78);
             this.btnBack.TabIndex = 4;
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -97,9 +97,9 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             this.btnBill.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBill.BackgroundImage")));
             this.btnBill.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBill.Location = new System.Drawing.Point(1035, 400);
+            this.btnBill.Location = new System.Drawing.Point(1035, 430);
             this.btnBill.Name = "btnBill";
-            this.btnBill.Size = new System.Drawing.Size(150, 100);
+            this.btnBill.Size = new System.Drawing.Size(131, 86);
             this.btnBill.TabIndex = 5;
             this.btnBill.UseVisualStyleBackColor = true;
             this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
@@ -108,9 +108,9 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             this.btnCloseTable.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCloseTable.BackgroundImage")));
             this.btnCloseTable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCloseTable.Location = new System.Drawing.Point(1216, 400);
+            this.btnCloseTable.Location = new System.Drawing.Point(1216, 430);
             this.btnCloseTable.Name = "btnCloseTable";
-            this.btnCloseTable.Size = new System.Drawing.Size(150, 100);
+            this.btnCloseTable.Size = new System.Drawing.Size(131, 86);
             this.btnCloseTable.TabIndex = 6;
             this.btnCloseTable.UseVisualStyleBackColor = true;
             this.btnCloseTable.Click += new System.EventHandler(this.btnCloseTable_Click);
@@ -120,21 +120,22 @@ namespace CafeAutomationCodeFirst.Forms
             this.dgvOrders.AllowUserToAddRows = false;
             this.dgvOrders.AllowUserToDeleteRows = false;
             this.dgvOrders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvOrders.BackgroundColor = System.Drawing.Color.White;
             this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrders.Location = new System.Drawing.Point(673, 31);
+            this.dgvOrders.Location = new System.Drawing.Point(659, 61);
             this.dgvOrders.MultiSelect = false;
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.ReadOnly = true;
             this.dgvOrders.RowTemplate.Height = 25;
             this.dgvOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOrders.Size = new System.Drawing.Size(693, 300);
+            this.dgvOrders.Size = new System.Drawing.Size(626, 270);
             this.dgvOrders.TabIndex = 8;
             // 
             // lblTotalPrice
             // 
             this.lblTotalPrice.AutoSize = true;
             this.lblTotalPrice.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTotalPrice.Location = new System.Drawing.Point(673, 367);
+            this.lblTotalPrice.Location = new System.Drawing.Point(659, 358);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.Size = new System.Drawing.Size(236, 22);
             this.lblTotalPrice.TabIndex = 9;
@@ -144,9 +145,9 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             this.btnDecrase.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDecrase.BackgroundImage")));
             this.btnDecrase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDecrase.Location = new System.Drawing.Point(1379, 268);
+            this.btnDecrase.Location = new System.Drawing.Point(1294, 61);
             this.btnDecrase.Name = "btnDecrase";
-            this.btnDecrase.Size = new System.Drawing.Size(76, 63);
+            this.btnDecrase.Size = new System.Drawing.Size(64, 63);
             this.btnDecrase.TabIndex = 10;
             this.btnDecrase.UseVisualStyleBackColor = true;
             this.btnDecrase.Click += new System.EventHandler(this.btnDecrase_Click);
@@ -159,7 +160,7 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1850, 920);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.btnDecrase);
             this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.dgvOrders);

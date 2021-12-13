@@ -263,22 +263,10 @@ namespace CafeAutomationCodeFirst.Forms
             printDialog.Document = printDocument1;
             printDialog.UseEXDialog = true;
             printDocument1.Print();
-            Close();
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            //Bitmap Adisyon = new Bitmap(this.tableLayoutPanelsepet.Width, this.tableLayoutPanelsepet.Height);
-            //lstCart.DrawToBitmap(Adisyon, new System.Drawing.Rectangle(0, 0, this.tableLayoutPanelsepet.Width, this.tableLayoutPanelsepet.Height));
-
-            //Bitmap lbl = new Bitmap(this.lblToplam.Width, this.lblToplam.Height);
-            //lblToplam.DrawToBitmap(lbl, new System.Drawing.Rectangle(0, 0, this.lblToplam.Width, this.lblToplam.Height));
-
-            //e.Graphics.DrawImage(Adisyon, 135, 65);
-            //e.Graphics.DrawImage(lbl, this.lstCart.Width, this.tableLayoutPanelsepet.Height - 300);
-
-            //------------------------------------------------------------------------------------------------------------------------------------------
-
             Font font = new Font("Arial", 14);
             SolidBrush firca = new SolidBrush(Color.Black);
             Pen kalem = new Pen(Color.Black);
@@ -292,20 +280,20 @@ namespace CafeAutomationCodeFirst.Forms
 
             font = new Font("Arial", 14, FontStyle.Bold);
 
-            e.Graphics.DrawString("ÜRÜN ADI", font, firca, 280, 140);
-            e.Graphics.DrawString("ADETİ", font, firca, 420, 140);
-            e.Graphics.DrawString("FİYATI", font, firca, 550, 140);
-            e.Graphics.DrawString("ARA TOPLAM", font, firca, 680, 140);
+            e.Graphics.DrawString("ÜRÜN ADI", font, firca, 60, 140);
+            e.Graphics.DrawString("ADETİ", font, firca, 280, 140);
+            e.Graphics.DrawString("FİYATI", font, firca, 420, 140);
+            e.Graphics.DrawString("ARA TOPLAM", font, firca, 550, 140);
 
             int i = 0;
             int y = 170;
             font = new Font("Arial", 14);
             while (i <= dgvOrders.Rows.Count - 1)
             {
-                e.Graphics.DrawString(dgvOrders.Rows[i].Cells[2].Value.ToString(), font, firca, 280, y);
-                e.Graphics.DrawString($"{dgvOrders.Rows[i].Cells[1].Value}".ToString(), font, firca, 420, y);
-                e.Graphics.DrawString($"{dgvOrders.Rows[i].Cells[4].Value:c2}", font, firca, 550, y);
-                e.Graphics.DrawString($"{ dgvOrders.Rows[i].Cells[5].Value:c2}".ToString(), font, firca, 680, y);
+                e.Graphics.DrawString(dgvOrders.Rows[i].Cells[2].Value.ToString(), font, firca, 60, y);
+                e.Graphics.DrawString($"{dgvOrders.Rows[i].Cells[1].Value}".ToString(), font, firca, 280, y);
+                e.Graphics.DrawString($"{dgvOrders.Rows[i].Cells[4].Value:c2}", font, firca, 420, y);
+                e.Graphics.DrawString($"{ dgvOrders.Rows[i].Cells[5].Value:c2}".ToString(), font, firca, 550, y);
                 y = y + 40;
                 i = i + 1;
             }

@@ -53,7 +53,7 @@ namespace CafeAutomationCodeFirst
             this.tableLayoutPanel1.Controls.Add(this.btnCafe, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnFloorTable, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnMenu, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(354, 204);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(136, 185);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -126,7 +126,7 @@ namespace CafeAutomationCodeFirst
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1472, 630);
+            this.ClientSize = new System.Drawing.Size(1117, 468);
             this.Controls.Add(this.tableLayoutPanel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
