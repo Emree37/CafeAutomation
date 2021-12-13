@@ -110,7 +110,7 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             this.lstProduct.FormattingEnabled = true;
             this.lstProduct.ItemHeight = 15;
-            this.lstProduct.Location = new System.Drawing.Point(1047, 131);
+            this.lstProduct.Location = new System.Drawing.Point(1000, 126);
             this.lstProduct.Name = "lstProduct";
             this.lstProduct.Size = new System.Drawing.Size(176, 424);
             this.lstProduct.TabIndex = 5;
@@ -122,7 +122,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(756, 131);
+            this.label2.Location = new System.Drawing.Point(709, 126);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 25);
             this.label2.TabIndex = 6;
@@ -134,7 +134,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(798, 164);
+            this.label3.Location = new System.Drawing.Point(751, 159);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 25);
             this.label3.TabIndex = 7;
@@ -142,7 +142,7 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(884, 131);
+            this.txtProductName.Location = new System.Drawing.Point(837, 126);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(157, 23);
             this.txtProductName.TabIndex = 8;
@@ -150,7 +150,7 @@ namespace CafeAutomationCodeFirst.Forms
             // nFiyat
             // 
             this.nFiyat.DecimalPlaces = 2;
-            this.nFiyat.Location = new System.Drawing.Point(884, 166);
+            this.nFiyat.Location = new System.Drawing.Point(837, 161);
             this.nFiyat.Name = "nFiyat";
             this.nFiyat.Size = new System.Drawing.Size(157, 23);
             this.nFiyat.TabIndex = 9;
@@ -158,7 +158,7 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             // pbProduct
             // 
-            this.pbProduct.Location = new System.Drawing.Point(884, 209);
+            this.pbProduct.Location = new System.Drawing.Point(837, 204);
             this.pbProduct.Name = "pbProduct";
             this.pbProduct.Size = new System.Drawing.Size(157, 177);
             this.pbProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -170,7 +170,7 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             this.btnProductAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProductAdd.BackgroundImage")));
             this.btnProductAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnProductAdd.Location = new System.Drawing.Point(1229, 131);
+            this.btnProductAdd.Location = new System.Drawing.Point(1182, 126);
             this.btnProductAdd.Name = "btnProductAdd";
             this.btnProductAdd.Size = new System.Drawing.Size(145, 122);
             this.btnProductAdd.TabIndex = 11;
@@ -214,7 +214,7 @@ namespace CafeAutomationCodeFirst.Forms
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(740, 204);
+            this.label6.Location = new System.Drawing.Point(693, 199);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(136, 25);
             this.label6.TabIndex = 15;
@@ -235,7 +235,7 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             this.btnProductUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProductUpdate.BackgroundImage")));
             this.btnProductUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnProductUpdate.Location = new System.Drawing.Point(1229, 273);
+            this.btnProductUpdate.Location = new System.Drawing.Point(1182, 268);
             this.btnProductUpdate.Name = "btnProductUpdate";
             this.btnProductUpdate.Size = new System.Drawing.Size(145, 122);
             this.btnProductUpdate.TabIndex = 17;
@@ -257,7 +257,7 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             this.btnProductDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProductDelete.BackgroundImage")));
             this.btnProductDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnProductDelete.Location = new System.Drawing.Point(1229, 433);
+            this.btnProductDelete.Location = new System.Drawing.Point(1182, 428);
             this.btnProductDelete.Name = "btnProductDelete";
             this.btnProductDelete.Size = new System.Drawing.Size(145, 122);
             this.btnProductDelete.TabIndex = 19;
@@ -268,7 +268,7 @@ namespace CafeAutomationCodeFirst.Forms
             // 
             this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBack.Location = new System.Drawing.Point(1230, 600);
+            this.btnBack.Location = new System.Drawing.Point(1183, 595);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(112, 71);
             this.btnBack.TabIndex = 20;

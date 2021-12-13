@@ -24,7 +24,7 @@ namespace CafeAutomationCodeFirst.Models
 
         public override string ToString()
         {
-            return $"{FloorName} KATI";
+            return $"{FloorName} - {FloorOrder}";
         }
     }
 }
